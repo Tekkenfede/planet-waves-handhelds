@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+custom_solver_bias = 1.0
+extents = Vector2( 4, 4 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -4, -4, 4, -4, 4, 4, -4, 4 )
+
+[node name="tile" type="Sprite"]
+
+[node name="staticBody2D" type="KinematicBody2D" parent="."]
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="staticBody2D"]
+shape = SubResource( 1 )
+
+[node name="lightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )

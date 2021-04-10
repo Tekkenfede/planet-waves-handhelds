@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/whiteRect.gd" type="Script" id=1]
+
+[node name="layerWhite" type="CanvasLayer"]
+layer = 4
+
+[node name="whiteRect" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.917647, 0.886275, 0.717647, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tween" type="Tween" parent="whiteRect"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+var fRadius=64
+var colorPlanetBg=Color('#24323f')
+func _ready():set_process(true)
+func _process(delta):update()
+func _draw():draw_circle(Vector2(),fRadius,colorPlanetBg)
+"
+
+[node name="planetBg" type="Node2D"]
+script = SubResource( 1 )

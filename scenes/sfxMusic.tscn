@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/sfxMusic.gd" type="Script" id=1]
+[ext_resource path="res://resources/sfx/Juhani Junkala [Retro Game Music Pack] Level 2.ogg" type="AudioStream" id=2]
+
+[node name="sfx" type="AudioStreamPlayer"]
+stream = ExtResource( 2 )
+volume_db = -80.0
+bus = "bgm"
+script = ExtResource( 1 )
+
+[node name="tween" type="Tween" parent="."]

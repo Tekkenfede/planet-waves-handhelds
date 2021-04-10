@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://resources/textures/star_06.png" type="Texture" id=1]
+[ext_resource path="res://resources/textures/sprites/Photovoltaic.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/sprites/PhotovoltaicNormal.png" type="Texture" id=3]
+
+[sub_resource type="Curve" id=1]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.166667, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.816667, 0.981818 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+trail_divisor = 5
+trail_size_modifier = SubResource( 4 )
+emission_shape = 2
+emission_box_extents = Vector3( 8, 4, 1 )
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 30.0
+gravity = Vector3( 0, 98, 0 )
+initial_velocity = 42.0
+initial_velocity_random = 0.2
+angular_velocity = 255.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.01
+scale_random = 0.02
+scale_curve = SubResource( 2 )
+color = Color( 1, 1, 1, 0.8 )
+
+[node name="sprPhoto" type="Sprite"]
+modulate = Color( 0.988235, 0.74902, 0.286275, 1 )
+position = Vector2( 23, 16 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 3 )
+
+[node name="photoParticles" type="Particles2D" parent="."]
+emitting = false
+amount = 100
+randomness = 0.2
+process_material = SubResource( 5 )
+texture = ExtResource( 1 )

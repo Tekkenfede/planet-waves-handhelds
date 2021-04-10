@@ -1,0 +1,2937 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://resources/textures/tiles0.png" type="Texture" id=3]
+[ext_resource path="res://scenes/tile.tscn" type="PackedScene" id=4]
+
+[node name="planetSurface" type="Node2D"]
+
+[node name="tile" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 192.841, -8.08243 )
+rotation = 4.71703
+scale = Vector2( 1.39557, 1.39557 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile2" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 65.5289, -2.74647 )
+rotation = 4.68192
+scale = Vector2( 0.977728, 0.977728 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile3" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 188.089, 0 )
+rotation = -1.55342
+scale = Vector2( 1.43492, 1.43492 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile4" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 65.3398, 0 )
+rotation = -1.55289
+scale = Vector2( 0.999314, 0.999314 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile5" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 190.489, 7.98387 )
+rotation = -1.52226
+scale = Vector2( 1.26278, 1.26278 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile6" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 65.1909, 2.73231 )
+rotation = -1.50068
+scale = Vector2( 0.925549, 0.925549 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile7" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 188.577, 15.8353 )
+rotation = -1.46829
+scale = Vector2( 1.25262, 1.25262 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile8" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 65.1999, 5.47499 )
+rotation = -1.48771
+scale = Vector2( 1.02139, 1.02139 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile9" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 188.092, 23.7616 )
+rotation = -1.44431
+scale = Vector2( 1.38422, 1.38422 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile10" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 64.7962, 8.18567 )
+rotation = -1.43103
+scale = Vector2( 1.0143, 1.0143 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile11" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 185.517, 31.3779 )
+rotation = -1.41236
+scale = Vector2( 1.38892, 1.38892 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile12" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 64.4131, 10.8947 )
+rotation = -1.41956
+scale = Vector2( 0.915475, 0.915475 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile13" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 188.067, 39.9749 )
+rotation = -1.3682
+scale = Vector2( 1.40896, 1.40896 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile14" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 63.8928, 13.5808 )
+rotation = -1.38081
+scale = Vector2( 0.907128, 0.907128 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile15" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 182.099, 46.755 )
+rotation = -1.32536
+scale = Vector2( 1.362, 1.362 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile16" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 63.1768, 16.2211 )
+rotation = -1.31486
+scale = Vector2( 0.948787, 0.948787 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile17" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 181.102, 54.6779 )
+rotation = -1.29177
+scale = Vector2( 1.40152, 1.40152 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile18" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 62.4079, 18.842 )
+rotation = -1.25954
+scale = Vector2( 1.01654, 1.01654 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile19" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 179.117, 62.3751 )
+rotation = -1.22912
+scale = Vector2( 1.34278, 1.34278 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile20" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 61.8904, 21.5525 )
+rotation = -1.25313
+scale = Vector2( 0.964979, 0.964979 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile21" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 175.363, 69.4311 )
+rotation = -1.18162
+scale = Vector2( 1.42067, 1.42067 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile22" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 60.946, 24.1302 )
+rotation = -1.18296
+scale = Vector2( 0.933903, 0.933903 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile23" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 174.566, 77.7218 )
+rotation = -1.1596
+scale = Vector2( 1.41607, 1.41607 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile24" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 59.7673, 26.6101 )
+rotation = -1.15389
+scale = Vector2( 0.848101, 0.848101 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile25" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 171.722, 85.2436 )
+rotation = -1.12552
+scale = Vector2( 1.43822, 1.43822 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile27" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 163.911, 90.1106 )
+rotation = -1.08342
+scale = Vector2( 1.45237, 1.45237 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile28" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 57.4933, 31.6072 )
+rotation = -1.08611
+scale = Vector2( 0.888239, 0.888239 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile29" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 162.566, 98.4536 )
+rotation = -1.02903
+scale = Vector2( 1.22742, 1.22742 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile30" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 56.1661, 34.0154 )
+rotation = -1.01364
+scale = Vector2( 0.973257, 0.973257 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile31" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 160.036, 106.327 )
+rotation = -0.988181
+scale = Vector2( 1.19854, 1.19854 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile32" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 54.3449, 36.1067 )
+rotation = -0.981809
+scale = Vector2( 0.951153, 0.951153 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile33" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 157.139, 114.169 )
+rotation = -0.939426
+scale = Vector2( 1.24738, 1.24738 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile34" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 53.0222, 38.5229 )
+rotation = -0.925761
+scale = Vector2( 0.943028, 0.943028 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile35" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 147.323, 116.767 )
+rotation = -0.909251
+scale = Vector2( 1.39037, 1.39037 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile36" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 51.2813, 40.6451 )
+rotation = -0.891793
+scale = Vector2( 0.930876, 0.930876 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile37" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 142.284, 122.817 )
+rotation = -0.870952
+scale = Vector2( 1.2476, 1.2476 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile38" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 49.6503, 42.857 )
+rotation = -0.864646
+scale = Vector2( 1.00188, 1.00188 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile39" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 138.696, 130.244 )
+rotation = -0.825508
+scale = Vector2( 1.26473, 1.26473 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile40" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 47.8451, 44.9295 )
+rotation = -0.821972
+scale = Vector2( 0.947783, 0.947783 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile41" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 135.45, 138.317 )
+rotation = -0.768815
+scale = Vector2( 1.37014, 1.37014 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile43" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 129.201, 143.492 )
+rotation = -0.731482
+scale = Vector2( 1.35746, 1.35746 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile44" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 43.6705, 48.501 )
+rotation = -0.722196
+scale = Vector2( 0.953824, 0.953824 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile45" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 122.718, 148.34 )
+rotation = -0.681326
+scale = Vector2( 1.45542, 1.45542 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile46" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 41.7562, 50.4746 )
+rotation = -0.681408
+scale = Vector2( 0.980992, 0.980992 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile47" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 117.486, 154.782 )
+rotation = -0.636939
+scale = Vector2( 1.32586, 1.32586 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile49" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 110.165, 158.507 )
+rotation = -0.613797
+scale = Vector2( 1.39256, 1.39256 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile50" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 37.4152, 53.8334 )
+rotation = -0.601279
+scale = Vector2( 0.843888, 0.843888 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile51" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 101.768, 160.361 )
+rotation = -0.575172
+scale = Vector2( 1.24599, 1.24599 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile52" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 34.986, 55.1292 )
+rotation = -0.564368
+scale = Vector2( 0.837916, 0.837916 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile53" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 96.4557, 167.066 )
+rotation = -0.530652
+scale = Vector2( 1.36297, 1.36297 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile54" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 32.7584, 56.7393 )
+rotation = -0.52936
+scale = Vector2( 0.99984, 0.99984 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile55" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 88.0284, 168.383 )
+rotation = -0.481707
+scale = Vector2( 1.26187, 1.26187 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile56" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 30.2208, 57.8071 )
+rotation = -0.48401
+scale = Vector2( 0.89548, 0.89548 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile57" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 82.43, 175.173 )
+rotation = -0.43127
+scale = Vector2( 1.39092, 1.39092 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile58" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 27.8975, 59.2852 )
+rotation = -0.436244
+scale = Vector2( 0.861684, 0.861684 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile59" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 74.6036, 177.475 )
+rotation = -0.396749
+scale = Vector2( 1.21186, 1.21186 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile61" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 66.9947, 180.143 )
+rotation = -0.360763
+scale = Vector2( 1.30169, 1.30169 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile62" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 22.7456, 61.161 )
+rotation = -0.355637
+scale = Vector2( 0.844666, 0.844666 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile63" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 58.2801, 179.368 )
+rotation = -0.31523
+scale = Vector2( 1.28472, 1.28472 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile64" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 20.1524, 62.0228 )
+rotation = -0.312986
+scale = Vector2( 0.929774, 0.929774 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile65" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 52.243, 187.113 )
+rotation = -0.27736
+scale = Vector2( 1.24379, 1.24379 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile66" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 17.5799, 62.9641 )
+rotation = -0.273007
+scale = Vector2( 0.985123, 0.985123 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile67" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 42.8364, 182.634 )
+rotation = -0.226209
+scale = Vector2( 1.28362, 1.28362 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile69" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 35.3837, 185.488 )
+rotation = -0.187692
+scale = Vector2( 1.36676, 1.36676 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile70" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 12.244, 64.1853 )
+rotation = -0.185816
+scale = Vector2( 0.955852, 0.955852 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile71" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 28.3847, 192.221 )
+rotation = -0.148649
+scale = Vector2( 1.30979, 1.30979 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile72" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 9.5806, 64.8797 )
+rotation = -0.14688
+scale = Vector2( 0.99209, 0.99209 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile73" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 20.2167, 192.349 )
+rotation = -0.103207
+scale = Vector2( 1.37244, 1.37244 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile74" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 6.86441, 65.3105 )
+rotation = -0.10679
+scale = Vector2( 0.867615, 0.867615 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile75" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 11.8117, 187.742 )
+rotation = -0.0618721
+scale = Vector2( 1.27081, 1.27081 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile76" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 4.1107, 65.3377 )
+rotation = -0.0621843
+scale = Vector2( 0.986149, 0.986149 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile77" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 3.98564, 190.273 )
+rotation = -0.0213213
+scale = Vector2( 1.37005, 1.37005 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile78" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 1.37292, 65.5424 )
+rotation = -0.0210293
+scale = Vector2( 0.848037, 0.848037 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile79" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -4.07349, 194.466 )
+rotation = 0.0212097
+scale = Vector2( 1.34613, 1.34613 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile80" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -1.37037, 65.4208 )
+rotation = 0.020626
+scale = Vector2( 0.872932, 0.872932 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile81" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -11.9488, 189.921 )
+rotation = 0.0636932
+scale = Vector2( 1.39591, 1.39591 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile82" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -4.0977, 65.1311 )
+rotation = 0.063302
+scale = Vector2( 0.968746, 0.968746 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile83" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -20.1231, 191.458 )
+rotation = 0.104646
+scale = Vector2( 1.25309, 1.25309 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile84" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -6.84483, 65.1242 )
+rotation = 0.10472
+scale = Vector2( 0.963536, 0.963536 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile85" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -28.138, 190.55 )
+rotation = 0.146577
+scale = Vector2( 1.26591, 1.26591 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile86" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -9.52695, 64.5164 )
+rotation = 0.147314
+scale = Vector2( 0.837014, 0.837014 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile87" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -35.7586, 187.453 )
+rotation = 0.187353
+scale = Vector2( 1.43068, 1.43068 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile88" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -12.3053, 64.5066 )
+rotation = 0.191113
+scale = Vector2( 0.889672, 0.889672 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile89" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -44.2921, 188.84 )
+rotation = 0.230444
+scale = Vector2( 1.30869, 1.30869 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile90" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -14.8882, 63.4762 )
+rotation = 0.227561
+scale = Vector2( 0.899971, 0.899971 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile91" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -50.7907, 181.912 )
+rotation = 0.275629
+scale = Vector2( 1.30784, 1.30784 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile92" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -17.5835, 62.977 )
+rotation = 0.272615
+scale = Vector2( 0.88207, 0.88207 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile93" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -59.6273, 183.514 )
+rotation = 0.319216
+scale = Vector2( 1.22331, 1.22331 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile94" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -20.1467, 62.0052 )
+rotation = 0.315946
+scale = Vector2( 0.867647, 0.867647 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile95" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -67.4487, 181.364 )
+rotation = 0.351837
+scale = Vector2( 1.26096, 1.26096 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile97" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -74.1334, 176.356 )
+rotation = 0.399252
+scale = Vector2( 1.21185, 1.21185 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile98" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -25.2881, 60.1581 )
+rotation = 0.391987
+scale = Vector2( 0.902729, 0.902729 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile99" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -82.5391, 175.404 )
+rotation = 0.439996
+scale = Vector2( 1.2093, 1.2093 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile100" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -27.9417, 59.3792 )
+rotation = 0.438146
+scale = Vector2( 0.850873, 0.850873 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile101" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -87.6295, 167.62 )
+rotation = 0.483962
+scale = Vector2( 1.37122, 1.37122 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile102" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -30.2243, 57.8137 )
+rotation = 0.485545
+scale = Vector2( 0.949706, 0.949706 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile103" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -95.8153, 165.957 )
+rotation = 0.518995
+scale = Vector2( 1.44518, 1.44518 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile104" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -32.5956, 56.4573 )
+rotation = 0.520241
+scale = Vector2( 1.00556, 1.00556 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile105" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -100.629, 158.566 )
+rotation = 0.561129
+scale = Vector2( 1.21409, 1.21409 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile107" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -110.489, 158.972 )
+rotation = 0.61155
+scale = Vector2( 1.43537, 1.43537 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile108" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -37.2516, 53.598 )
+rotation = 0.604661
+scale = Vector2( 0.987756, 0.987756 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile109" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -113.795, 149.919 )
+rotation = 0.64322
+scale = Vector2( 1.4445, 1.4445 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile110" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -39.5396, 52.0914 )
+rotation = 0.638701
+scale = Vector2( 0.944642, 0.944642 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile111" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -120.024, 145.084 )
+rotation = 0.683473
+scale = Vector2( 1.3888, 1.3888 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile113" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -125.52, 139.404 )
+rotation = 0.718784
+scale = Vector2( 1.3179, 1.3179 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile114" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -43.7037, 48.5378 )
+rotation = 0.732526
+scale = Vector2( 1.01622, 1.01622 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile115" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -132.269, 135.068 )
+rotation = 0.76293
+scale = Vector2( 1.21836, 1.21836 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile116" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -45.7503, 46.7187 )
+rotation = 0.789085
+scale = Vector2( 0.902296, 0.902296 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile117" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -138.657, 130.208 )
+rotation = 0.823092
+scale = Vector2( 1.25177, 1.25177 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile119" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -147.164, 127.028 )
+rotation = 0.86642
+scale = Vector2( 1.24208, 1.24208 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile120" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -49.4192, 42.6575 )
+rotation = 0.858939
+scale = Vector2( 0.968812, 0.968812 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile121" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -146.678, 116.255 )
+rotation = 0.88438
+scale = Vector2( 1.42137, 1.42137 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile122" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -51.2392, 40.6117 )
+rotation = 0.893772
+scale = Vector2( 0.875635, 0.875635 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile123" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -157.733, 114.599 )
+rotation = 0.939906
+scale = Vector2( 1.24177, 1.24177 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile124" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -53.1392, 38.6079 )
+rotation = 0.925276
+scale = Vector2( 0.872021, 0.872021 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile125" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -156.566, 104.022 )
+rotation = 0.994432
+scale = Vector2( 1.43388, 1.43388 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile126" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -54.5633, 36.2518 )
+rotation = 0.997471
+scale = Vector2( 0.957708, 0.957708 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile127" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -160.054, 96.932 )
+rotation = 1.01036
+scale = Vector2( 1.31829, 1.31829 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile128" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -55.9789, 33.902 )
+rotation = 1.03499
+scale = Vector2( 0.923325, 0.923325 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile129" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -167.82, 92.26 )
+rotation = 1.05592
+scale = Vector2( 1.2705, 1.2705 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile130" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -57.1429, 31.4146 )
+rotation = 1.04947
+scale = Vector2( 0.96526, 0.96526 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile131" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -173.706, 86.2282 )
+rotation = 1.13056
+scale = Vector2( 1.365, 1.365 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile133" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -173.385, 77.1961 )
+rotation = 1.14862
+scale = Vector2( 1.29715, 1.29715 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile134" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -59.605, 26.5379 )
+rotation = 1.17296
+scale = Vector2( 0.839375, 0.839375 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile135" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -179.869, 71.2153 )
+rotation = 1.21607
+scale = Vector2( 1.22844, 1.22844 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile136" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -60.6224, 24.0021 )
+rotation = 1.19374
+scale = Vector2( 1.00444, 1.00444 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile137" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -177.067, 61.6613 )
+rotation = 1.24811
+scale = Vector2( 1.30762, 1.30762 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile138" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -61.6339, 21.4632 )
+rotation = 1.21738
+scale = Vector2( 0.895802, 0.895802 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile139" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -183.075, 55.2737 )
+rotation = 1.29267
+scale = Vector2( 1.22309, 1.22309 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile140" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -62.6149, 18.9045 )
+rotation = 1.25588
+scale = Vector2( 1.00484, 1.00484 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile141" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -187.498, 48.1414 )
+rotation = 1.32505
+scale = Vector2( 1.34222, 1.34222 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile142" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -63.4749, 16.2976 )
+rotation = 1.3379
+scale = Vector2( 0.907528, 0.907528 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile143" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -185.081, 39.3402 )
+rotation = 1.35163
+scale = Vector2( 1.24063, 1.24063 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile145" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -189.579, 32.065 )
+rotation = 1.38657
+scale = Vector2( 1.33801, 1.33801 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile146" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -64.4225, 10.8962 )
+rotation = 1.39935
+scale = Vector2( 0.8752, 0.8752 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile147" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -192.786, 24.3545 )
+rotation = 1.45412
+scale = Vector2( 1.22637, 1.22637 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile148" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.0144, 8.21323 )
+rotation = 1.45497
+scale = Vector2( 0.919832, 0.919832 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile149" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -188.793, 15.8534 )
+rotation = 1.48474
+scale = Vector2( 1.28967, 1.28967 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile150" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.0239, 5.46021 )
+rotation = 1.46351
+scale = Vector2( 0.959649, 0.959649 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile151" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -192.258, 8.05801 )
+rotation = 1.53024
+scale = Vector2( 1.41027, 1.41027 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile152" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.3326, 2.73825 )
+rotation = 1.5037
+scale = Vector2( 0.927428, 0.927428 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile153" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -192.306, 2.35499e-14 )
+rotation = 1.57702
+scale = Vector2( 1.33275, 1.33275 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile154" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.5742, 8.03026e-15 )
+rotation = 1.59151
+scale = Vector2( 0.962208, 0.962208 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile155" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -188.287, -7.89156 )
+rotation = 1.63376
+scale = Vector2( 1.32173, 1.32173 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile156" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.3708, -2.73985 )
+rotation = 1.58517
+scale = Vector2( 1.00355, 1.00355 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile157" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -191.109, -16.0478 )
+rotation = 1.67293
+scale = Vector2( 1.4093, 1.4093 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile158" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.387, -5.4907 )
+rotation = 1.67777
+scale = Vector2( 0.91262, 0.91262 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile159" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -185.839, -23.477 )
+rotation = 1.71626
+scale = Vector2( 1.29101, 1.29101 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile160" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -65.0344, -8.21576 )
+rotation = 1.72684
+scale = Vector2( 0.857517, 0.857517 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile161" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -188.857, -31.9427 )
+rotation = 1.71619
+scale = Vector2( 1.39861, 1.39861 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile163" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -190.27, -40.4432 )
+rotation = 1.79198
+scale = Vector2( 1.21011, 1.21011 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile164" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -63.9826, -13.5999 )
+rotation = 1.76062
+scale = Vector2( 0.845932, 0.845932 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile165" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -183.998, -47.2426 )
+rotation = 1.79745
+scale = Vector2( 1.32093, 1.32093 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile166" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -63.3145, -16.2564 )
+rotation = 1.81048
+scale = Vector2( 1.02219, 1.02219 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile167" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -181.083, -54.6722 )
+rotation = 1.88475
+scale = Vector2( 1.24943, 1.24943 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile168" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -62.5328, -18.8798 )
+rotation = 1.89305
+scale = Vector2( 0.967323, 0.967323 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile169" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -183.821, -64.0134 )
+rotation = 1.89563
+scale = Vector2( 1.33577, 1.33577 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile170" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -61.7861, -21.5162 )
+rotation = 1.87449
+scale = Vector2( 0.850804, 0.850804 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile171" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -179.965, -71.2531 )
+rotation = 1.94234
+scale = Vector2( 1.23871, 1.23871 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile172" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -60.6438, -24.0106 )
+rotation = 1.92491
+scale = Vector2( 0.989623, 0.989623 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile173" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -172.426, -76.7688 )
+rotation = 1.98592
+scale = Vector2( 1.2607, 1.2607 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile174" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -59.8824, -26.6614 )
+rotation = 2.00554
+scale = Vector2( 1.02063, 1.02063 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile175" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -172.95, -85.853 )
+rotation = 2.06099
+scale = Vector2( 1.30346, 1.30346 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile176" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -58.3893, -28.9847 )
+rotation = 2.06516
+scale = Vector2( 1.01927, 1.01927 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile177" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -169.656, -93.2693 )
+rotation = 2.05444
+scale = Vector2( 1.45763, 1.45763 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile178" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -57.5253, -31.6248 )
+rotation = 2.07439
+scale = Vector2( 0.878292, 0.878292 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile179" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -160.299, -97.0805 )
+rotation = 2.14879
+scale = Vector2( 1.38722, 1.38722 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile180" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -56.0188, -33.9262 )
+rotation = 2.13793
+scale = Vector2( 0.927405, 0.927405 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile181" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -156.095, -103.709 )
+rotation = 2.13274
+scale = Vector2( 1.37103, 1.37103 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile182" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -54.6496, -36.3091 )
+rotation = 2.18748
+scale = Vector2( 0.843258, 0.843258 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile183" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -152.813, -111.025 )
+rotation = 2.21955
+scale = Vector2( 1.33122, 1.33122 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile185" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -146.867, -116.406 )
+rotation = 2.22963
+scale = Vector2( 1.32983, 1.32983 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile186" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -51.109, -40.5085 )
+rotation = 2.24171
+scale = Vector2( 0.940795, 0.940795 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile187" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -142.267, -122.802 )
+rotation = 2.23805
+scale = Vector2( 1.45145, 1.45145 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile188" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -49.6047, -42.8176 )
+rotation = 2.28057
+scale = Vector2( 1.01478, 1.01478 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile189" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -139.989, -131.459 )
+rotation = 2.36543
+scale = Vector2( 1.28359, 1.28359 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile190" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -47.6317, -44.7291 )
+rotation = 2.33864
+scale = Vector2( 0.987583, 0.987583 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile191" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -132.917, -135.731 )
+rotation = 2.33715
+scale = Vector2( 1.23312, 1.23312 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile192" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -45.6333, -46.5992 )
+rotation = 2.38403
+scale = Vector2( 1.00337, 1.00337 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile193" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -125.439, -139.314 )
+rotation = 2.38362
+scale = Vector2( 1.37397, 1.37397 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile194" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -43.921, -48.7792 )
+rotation = 2.36174
+scale = Vector2( 0.878951, 0.878951 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile195" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -119.296, -144.204 )
+rotation = 2.46442
+scale = Vector2( 1.2329, 1.2329 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile197" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -114.062, -150.271 )
+rotation = 2.48591
+scale = Vector2( 1.41936, 1.41936 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile198" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -39.5521, -52.1079 )
+rotation = 2.518
+scale = Vector2( 0.996424, 0.996424 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile199" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -108.308, -155.835 )
+rotation = 2.52327
+scale = Vector2( 1.24316, 1.24316 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile200" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -37.4524, -53.8869 )
+rotation = 2.56216
+scale = Vector2( 0.932015, 0.932015 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile201" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -102.114, -160.905 )
+rotation = 2.56536
+scale = Vector2( 1.22076, 1.22076 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile202" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -35.1828, -55.4392 )
+rotation = 2.58597
+scale = Vector2( 1.0028, 1.0028 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile203" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -94.9553, -164.467 )
+rotation = 2.60672
+scale = Vector2( 1.21512, 1.21512 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile205" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -86.9678, -166.354 )
+rotation = 2.65856
+scale = Vector2( 1.21473, 1.21473 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile206" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -30.3057, -57.9694 )
+rotation = 2.6859
+scale = Vector2( 0.952424, 0.952424 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile207" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -81.0949, -172.335 )
+rotation = 2.69387
+scale = Vector2( 1.41162, 1.41162 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile208" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -27.8094, -59.098 )
+rotation = 2.66542
+scale = Vector2( 1.01389, 1.01389 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile209" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -73.6716, -175.258 )
+rotation = 2.7642
+scale = Vector2( 1.38224, 1.38224 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile210" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -25.3814, -60.3799 )
+rotation = 2.71901
+scale = Vector2( 0.990294, 0.990294 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile211" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -66.388, -178.512 )
+rotation = 2.80656
+scale = Vector2( 1.21039, 1.21039 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile212" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -22.7988, -61.304 )
+rotation = 2.78883
+scale = Vector2( 0.890465, 0.890465 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile213" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -59.1567, -182.066 )
+rotation = 2.80993
+scale = Vector2( 1.21488, 1.21488 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile214" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -20.2598, -62.3532 )
+rotation = 2.81151
+scale = Vector2( 0.91411, 0.91411 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile215" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -50.7585, -181.796 )
+rotation = 2.90028
+scale = Vector2( 1.46051, 1.46051 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile216" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -17.5931, -63.0113 )
+rotation = 2.83149
+scale = Vector2( 0.911143, 0.911143 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile217" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -43.2408, -184.358 )
+rotation = 2.91862
+scale = Vector2( 1.31681, 1.31681 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile218" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -14.9202, -63.6126 )
+rotation = 2.92812
+scale = Vector2( 0.939689, 0.939689 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile219" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -35.2449, -184.76 )
+rotation = 2.98986
+scale = Vector2( 1.41201, 1.41201 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile221" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -27.7808, -188.131 )
+rotation = 3.0331
+scale = Vector2( 1.2928, 1.2928 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile222" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -9.59429, -64.9724 )
+rotation = 2.95846
+scale = Vector2( 1.00856, 1.00856 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile223" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -19.7744, -188.141 )
+rotation = 3.03576
+scale = Vector2( 1.34561, 1.34561 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile224" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -6.85171, -65.1897 )
+rotation = 2.99703
+scale = Vector2( 0.937299, 0.937299 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile225" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -11.8276, -187.994 )
+rotation = 3.12137
+scale = Vector2( 1.41328, 1.41328 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile226" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -4.09953, -65.1602 )
+rotation = 3.05738
+scale = Vector2( 0.837235, 0.837235 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile227" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -4.00505, -191.199 )
+rotation = 3.17897
+scale = Vector2( 1.25935, 1.25935 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile228" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( -1.36685, -65.253 )
+rotation = 3.11523
+scale = Vector2( 0.896762, 0.896762 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile229" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 3.95832, -188.968 )
+rotation = 3.22301
+scale = Vector2( 1.23736, 1.23736 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile231" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 11.798, -187.523 )
+rotation = 3.14602
+scale = Vector2( 1.29755, 1.29755 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile232" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 4.10515, -65.2495 )
+rotation = 3.24972
+scale = Vector2( 1.00003, 1.00003 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile233" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 20.1932, -192.125 )
+rotation = 3.2161
+scale = Vector2( 1.35878, 1.35878 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile235" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 27.6745, -187.411 )
+rotation = 3.35309
+scale = Vector2( 1.28317, 1.28317 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile236" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 9.5276, -64.5208 )
+rotation = 3.2405
+scale = Vector2( 0.990749, 0.990749 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile237" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 35.167, -184.352 )
+rotation = 3.38874
+scale = Vector2( 1.28736, 1.28736 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile238" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 12.2701, -64.3223 )
+rotation = 3.30385
+scale = Vector2( 0.893599, 0.893599 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile239" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 43.5962, -185.873 )
+rotation = 3.42908
+scale = Vector2( 1.27125, 1.27125 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile241" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 52.3348, -187.442 )
+rotation = 3.38019
+scale = Vector2( 1.27128, 1.27128 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile242" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 17.6582, -63.2447 )
+rotation = 3.42477
+scale = Vector2( 0.851811, 0.851811 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile243" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 58.2584, -179.301 )
+rotation = 3.4179
+scale = Vector2( 1.3704, 1.3704 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile244" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 20.2913, -62.4503 )
+rotation = 3.42313
+scale = Vector2( 0.90789, 0.90789 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile245" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 66.8069, -179.638 )
+rotation = 3.51532
+scale = Vector2( 1.34641, 1.34641 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile246" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 22.8397, -61.4142 )
+rotation = 3.43136
+scale = Vector2( 0.945586, 0.945586 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile247" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 74.8672, -178.102 )
+rotation = 3.55443
+scale = Vector2( 1.39673, 1.39673 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile248" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 25.4207, -60.4735 )
+rotation = 3.58864
+scale = Vector2( 0.98484, 0.98484 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile249" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 81.423, -173.033 )
+rotation = 3.55832
+scale = Vector2( 1.26667, 1.26667 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile250" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 27.8304, -59.1426 )
+rotation = 3.58089
+scale = Vector2( 0.963536, 0.963536 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile251" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 87.7524, -167.855 )
+rotation = 3.55715
+scale = Vector2( 1.41946, 1.41946 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile252" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 30.4256, -58.1987 )
+rotation = 3.65819
+scale = Vector2( 0.86719, 0.86719 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile253" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 94.81, -164.216 )
+rotation = 3.69617
+scale = Vector2( 1.43857, 1.43857 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile254" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 32.7769, -56.7713 )
+rotation = 3.69565
+scale = Vector2( 0.92544, 0.92544 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile255" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 103.689, -163.387 )
+rotation = 3.7603
+scale = Vector2( 1.38406, 1.38406 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile256" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 35.0067, -55.1617 )
+rotation = 3.65532
+scale = Vector2( 0.90221, 0.90221 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile257" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 106.973, -153.914 )
+rotation = 3.76265
+scale = Vector2( 1.21341, 1.21341 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile259" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 116.92, -154.037 )
+rotation = 3.78547
+scale = Vector2( 1.28434, 1.28434 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile260" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 39.5783, -52.1424 )
+rotation = 3.82385
+scale = Vector2( 0.874769, 0.874769 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile261" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 123.883, -149.749 )
+rotation = 3.85409
+scale = Vector2( 1.38641, 1.38641 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile262" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 41.5761, -50.2568 )
+rotation = 3.7904
+scale = Vector2( 0.839267, 0.839267 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile263" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 127.852, -141.994 )
+rotation = 3.82412
+scale = Vector2( 1.40976, 1.40976 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile264" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 43.8174, -48.6642 )
+rotation = 3.94076
+scale = Vector2( 0.95623, 0.95623 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile265" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 131.099, -133.874 )
+rotation = 3.92466
+scale = Vector2( 1.30704, 1.30704 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile266" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 45.795, -46.7643 )
+rotation = 3.87886
+scale = Vector2( 0.992486, 0.992486 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile267" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 136.458, -128.142 )
+rotation = 3.98625
+scale = Vector2( 1.40354, 1.40354 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile268" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 47.6783, -44.7729 )
+rotation = 3.88648
+scale = Vector2( 0.985884, 0.985884 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile269" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 144.339, -124.59 )
+rotation = 3.98524
+scale = Vector2( 1.46242, 1.46242 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile271" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 147.033, -116.537 )
+rotation = 4.09818
+scale = Vector2( 1.37978, 1.37978 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile272" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 51.3188, -40.6748 )
+rotation = 4.0877
+scale = Vector2( 0.907566, 0.907566 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile273" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 155.854, -113.235 )
+rotation = 4.03894
+scale = Vector2( 1.25286, 1.25286 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile274" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 52.8365, -38.388 )
+rotation = 4.15126
+scale = Vector2( 0.937002, 0.937002 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile275" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 158.075, -105.024 )
+rotation = 4.09147
+scale = Vector2( 1.20277, 1.20277 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile276" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 54.3948, -36.1398 )
+rotation = 4.20512
+scale = Vector2( 0.946723, 0.946723 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile277" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 160.411, -97.1483 )
+rotation = 4.16353
+scale = Vector2( 1.31604, 1.31604 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile278" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 56.0502, -33.9452 )
+rotation = 4.12153
+scale = Vector2( 0.859797, 0.859797 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile279" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 166.447, -91.5048 )
+rotation = 4.24446
+scale = Vector2( 1.3716, 1.3716 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile280" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 57.5452, -31.6357 )
+rotation = 4.20329
+scale = Vector2( 0.846974, 0.846974 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile281" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 168.829, -83.8074 )
+rotation = 4.215
+scale = Vector2( 1.38812, 1.38812 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile282" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 58.6799, -29.129 )
+rotation = 4.23862
+scale = Vector2( 0.877662, 0.877662 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile283" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 172.628, -76.8589 )
+rotation = 4.24525
+scale = Vector2( 1.30753, 1.30753 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile285" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 177.915, -70.4415 )
+rotation = 4.29238
+scale = Vector2( 1.23662, 1.23662 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile286" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 60.6393, -24.0088 )
+rotation = 4.27781
+scale = Vector2( 0.912143, 0.912143 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile287" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 181.012, -63.0352 )
+rotation = 4.37269
+scale = Vector2( 1.43366, 1.43366 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile288" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 61.99, -21.5872 )
+rotation = 4.45009
+scale = Vector2( 0.997079, 0.997079 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile289" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 185.837, -56.1074 )
+rotation = 4.39648
+scale = Vector2( 1.42721, 1.42721 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile290" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 62.4641, -18.859 )
+rotation = 4.4823
+scale = Vector2( 0.840485, 0.840485 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile291" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 188.669, -48.4421 )
+rotation = 4.38044
+scale = Vector2( 1.39574, 1.39574 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile292" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 63.2482, -16.2394 )
+rotation = 4.47973
+scale = Vector2( 0.86367, 0.86367 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 8
+
+[node name="tile293" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 185.309, -39.3887 )
+rotation = 4.51274
+scale = Vector2( 1.32068, 1.32068 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile294" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 63.9011, -13.5826 )
+rotation = 4.41312
+scale = Vector2( 1.01617, 1.01617 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile295" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 191.698, -32.4234 )
+rotation = 4.52622
+scale = Vector2( 1.38172, 1.38172 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 10
+
+[node name="tile297" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 190.921, -24.1189 )
+rotation = 4.63455
+scale = Vector2( 1.448, 1.448 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile298" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 64.9498, -8.20507 )
+rotation = 4.62518
+scale = Vector2( 0.934399, 0.934399 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile299" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 193.268, -16.2292 )
+rotation = 4.64384
+scale = Vector2( 1.43676, 1.43676 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 9
+
+[node name="tile300" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 65.4052, -5.49223 )
+rotation = 4.68725
+scale = Vector2( 0.881817, 0.881817 )
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7
+
+[node name="tile301" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0.815686, 0.807843, 0.486275, 1 )
+position = Vector2( 189.62, -7.94743 )
+rotation = 4.65013
+scale = Vector2( 1.42878, 1.42878 )
+z_index = 15
+texture = ExtResource( 3 )
+vframes = 3
+hframes = 20
+frame = 7

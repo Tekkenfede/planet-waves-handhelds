@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/textures/sprites/laser_tower.png" type="Texture" id=1]
+[ext_resource path="res://resources/textures/sprites/towers_support.png" type="Texture" id=2]
+[ext_resource path="res://resources/textures/sprites/laser_towerNormal.png" type="Texture" id=3]
+[ext_resource path="res://resources/textures/sprites/towers_supportNormal.png" type="Texture" id=4]
+
+[node name="sprLaser" type="Sprite"]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="sprTower" type="Sprite" parent="."]
+position = Vector2( 0, 16 )
+texture = ExtResource( 1 )
+normal_map = ExtResource( 3 )
+offset = Vector2( 0, -25 )
+
+[node name="cannonLaser" type="Position2D" parent="sprTower"]
+position = Vector2( 0, -30 )
+__meta__ = {
+"_gizmo_extents_": 20.0
+}
+
+[node name="sprBase" type="Sprite" parent="."]
+position = Vector2( 0, 9.33333 )
+texture = ExtResource( 2 )
+normal_map = ExtResource( 4 )
+hframes = 3

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/etc/splashFadeAway.gd" type="Script" id=1]
+[ext_resource path="res://resources/splashScreen.png" type="Texture" id=2]
+
+[node name="splashFadeAway" type="CanvasLayer"]
+layer = 128
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+
+[node name="tween" type="Tween" parent="."]

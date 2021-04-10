@@ -1,8 +1,8 @@
 extends Node2D
 var t=0
-var radius=6
-var ringWidth=4
-var duration=0.33
+var radius=8#2
+var ringWidth=6#1.5
+var duration=0.5
 func _ready():
 	$twn.connect("tween_all_completed",self,'queue_free')
 	set_process(true)

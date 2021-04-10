@@ -1,0 +1,1097 @@
+[gd_scene load_steps=67 format=2]
+
+[ext_resource path="res://scenes/etc/spawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/planetBase.gd" type="Script" id=3]
+[ext_resource path="res://scenes/sun.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/structures.gd" type="Script" id=5]
+[ext_resource path="res://resources/placeholderTextures/lightCircle.png" type="Texture" id=6]
+[ext_resource path="res://resources/placeholderTextures/white.png" type="Texture" id=7]
+[ext_resource path="res://resources/textures/energyIcon.png" type="Texture" id=8]
+[ext_resource path="res://scenes/planet/planetSurfaceGenerated.tscn" type="PackedScene" id=9]
+[ext_resource path="res://resources/fonts/m6x11.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://scenes/btnGenStructure.gd" type="Script" id=11]
+[ext_resource path="res://scenes/bgParticles.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/cameraLayer.tscn" type="PackedScene" id=13]
+[ext_resource path="res://resources/textures/sprites/icons.png" type="Texture" id=14]
+[ext_resource path="res://scenes/uiScenes/strTitle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/planet/planetCore.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/uiScenes/controlGuide.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/uiScenes/layerWhite.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/panelUnlocks.gd" type="Script" id=19]
+[ext_resource path="res://scenes/etc/hboxNumbers.gd" type="Script" id=20]
+[ext_resource path="res://scenes/hbox.gd" type="Script" id=21]
+[ext_resource path="res://scenes/debugControl.gd" type="Script" id=22]
+[ext_resource path="res://scenes/uiScenes/vboxLeaderboards.gd" type="Script" id=23]
+[ext_resource path="res://scenes/etc/splashFadeAway.tscn" type="PackedScene" id=24]
+
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 16.0
+content_margin_right = 16.0
+content_margin_top = 6.0
+content_margin_bottom = 36.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_detail = 1
+expand_margin_bottom = 32.0
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends MarginContainer
+var bHidden=false
+const sfxNewStructure=preload(\"res://scenes/sfxNewStructure.tscn\")
+func _ready():
+	set_process(true)
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_hideStructures\"):
+		if self.bHidden:
+			self.bHidden=false
+			$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,0,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
+			$tween.start()
+			global.nDebug2droot.add_child(sfxNewStructure.instance())
+		else:
+			self.bHidden=true
+			$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,28,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
+			$tween.start()
+			global.nDebug2droot.add_child(sfxNewStructure.instance())
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 3.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_detail = 1
+expand_margin_top = 9.0
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=5]
+extra_spacing_top = -13
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 3.0
+content_margin_bottom = 1.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
+corner_detail = 1
+expand_margin_bottom = 13.0
+anti_aliasing = false
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="DynamicFont" id=8]
+outline_color = Color( 0, 0.188235, 0.286275, 1 )
+extra_spacing_top = -8
+extra_spacing_bottom = -5
+font_data = ExtResource( 2 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 14 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 14 )
+region = Rect2( 96, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 14 )
+region = Rect2( 48, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 14 )
+region = Rect2( 72, 0, 24, 24 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+content_margin_right = 2.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_bottom_right = 4
+corner_detail = 1
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+anti_aliasing = false
+
+[sub_resource type="GDScript" id=14]
+script/source = "extends HBoxContainer
+var fLastEnergy=0
+func _ready():
+	self.fLastEnergy=global.fEnergy
+	set_process(true)
+func _process(delta):
+	if self.fLastEnergy!=global.fEnergy:
+		if self.fLastEnergy<global.fEnergy:self.modulate=global.colors['yellow']
+		elif self.fLastEnergy>global.fEnergy:self.modulate=global.colors['red']
+		self.fLastEnergy=global.fEnergy
+	else:
+		self.modulate=global.colors['white']
+"
+
+[sub_resource type="DynamicFont" id=15]
+extra_spacing_top = 2
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=16]
+script/source = "extends Label
+func _ready():set_process(true)
+func _process(delta):self.text=str(floor(global.fEnergy))
+"
+
+[sub_resource type="StyleBoxFlat" id=17]
+content_margin_left = 2.0
+content_margin_right = 0.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_bottom_left = 4
+corner_detail = 1
+expand_margin_right = 10.0
+expand_margin_top = 10.0
+anti_aliasing = false
+
+[sub_resource type="GDScript" id=18]
+script/source = "extends Label
+var iValue=0
+func _ready():set_process(true)
+func _process(delta):
+	iValue=lerp(iValue,global.iScore,0.2)
+	self.text=str(ceil(self.iValue))
+"
+
+[sub_resource type="GDScript" id=19]
+script/source = "extends Control
+func _ready():
+	self.visible=false
+	self.modulate.a=0
+	global.connect(\"clearActors\",self,'appear')
+func appear():
+	self.visible=true
+	$tween.interpolate_property(self,'modulate:a',self.modulate.a,1,0.66,Tween.TRANS_QUINT,Tween.EASE_IN,2.0)
+	$tween.start()
+"
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=22]
+script/source = "extends CenterContainer
+func _ready():
+	$vboxEnd.visible=true
+	$vboxLeaderboards.visible=false
+	$vboxEnd/vboxSendScore.connect(\"scoreSent\",self,'scoreSent')
+func scoreSent():
+	$vboxEnd.visible=false
+	$vboxLeaderboards.visible=true
+	$vboxLeaderboards.loadScoreboard()
+"
+
+[sub_resource type="GDScript" id=23]
+script/source = "extends Label
+var iValue=0
+func _ready():set_process(true)
+func _process(delta):
+	iValue=lerp(iValue,global.iScore,0.2)
+	self.text=str(ceil(self.iValue))
+"
+
+[sub_resource type="GDScript" id=24]
+script/source = "extends VBoxContainer
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+signal scoreSent
+func _ready():
+	$btnSendScore.connect(\"pressed\",self,'sendScore')
+func sendScore():
+	if $lineEdit.text!='':
+		$btnSendScore.visible=false
+		var score_id = yield(SilentWolf.Scores.persist_score($lineEdit.text, global.iScore), \"sw_score_posted\")
+		global.scoreId=score_id
+		emit_signal('scoreSent')
+		print_debug(\"Score persisted successfully: \" + str(score_id))
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="StyleBoxFlat" id=25]
+content_margin_left = 2.0
+content_margin_top = 4.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=26]
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=30]
+extra_spacing_top = -4
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=31]
+extra_spacing_top = -6
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxLine" id=32]
+color = Color( 1, 1, 1, 1 )
+grow_begin = 8.0
+grow_end = 8.0
+
+[sub_resource type="StyleBoxFlat" id=33]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=34]
+bg_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=35]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=36]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=37]
+bg_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 1
+anti_aliasing = false
+
+[sub_resource type="DynamicFont" id=38]
+extra_spacing_top = 2
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=39]
+script/source = "extends Button
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():self.connect('pressed',self,'pressed')
+func pressed():
+	global.resetGame()
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="GDScript" id=40]
+script/source = "extends Node2D
+func _ready():global.nDebug2droot=self
+"
+
+[sub_resource type="DynamicFont" id=41]
+size = 96
+extra_spacing_top = 22
+extra_spacing_char = 6
+font_data = ExtResource( 10 )
+
+[sub_resource type="GDScript" id=42]
+script/source = "extends Label
+func _ready():set_process(true)
+func _process(delta):
+	if global.iPlanetLife>9:self.text=str(global.iPlanetLife)
+	elif global.iPlanetLife>=0:self.text='0'+str(global.iPlanetLife)
+	else:self.text='0'
+"
+
+[node name="debugRoot" type="Node"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 55.0326 ],
+"_edit_vertical_guides_": [ 84.0 ]
+}
+
+[node name="splashFadeAway" parent="." instance=ExtResource( 24 )]
+
+[node name="layerWhite" parent="." instance=ExtResource( 18 )]
+
+[node name="debugUi" type="CanvasLayer" parent="."]
+
+[node name="debugControl" type="Control" parent="debugUi"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panelUnlocks" type="PanelContainer" parent="debugUi/debugControl"]
+margin_left = 61.0
+margin_top = 284.0
+margin_right = 192.0
+margin_bottom = 340.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label" type="Label" parent="debugUi/debugControl/panelUnlocks"]
+margin_left = 16.0
+margin_top = 6.0
+margin_right = 115.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "Unlocked spread"
+align = 1
+
+[node name="tween" type="Tween" parent="debugUi/debugControl/panelUnlocks"]
+
+[node name="marginContainer" type="MarginContainer" parent="debugUi/debugControl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+custom_constants/margin_right = 4
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="control" type="Control" parent="debugUi/debugControl/marginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 252.0
+margin_bottom = 268.0
+mouse_filter = 2
+
+[node name="ctnStructuresUi" type="MarginContainer" parent="debugUi/debugControl/marginContainer/control"]
+margin_right = 250.0
+margin_bottom = 266.0
+mouse_filter = 2
+script = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="marginCtnNumbers" type="MarginContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi"]
+margin_left = 83.0
+margin_top = 242.0
+margin_right = 167.0
+margin_bottom = 266.0
+rect_min_size = Vector2( 84, 24 )
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_constants/margin_right = 6
+custom_constants/margin_left = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hboxNumbers" type="HBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers"]
+margin_left = 6.0
+margin_right = 78.0
+margin_bottom = 24.0
+alignment = 1
+script = ExtResource( 20 )
+
+[node name="panelContainer" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers"]
+margin_right = 11.0
+margin_bottom = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers/panelContainer"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 10.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+text = "1"
+align = 1
+
+[node name="panelContainer2" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers"]
+margin_left = 15.0
+margin_right = 26.0
+margin_bottom = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
+
+[node name="label2" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers/panelContainer2"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 10.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.968627, 0.498039, 0, 1 )
+text = "2"
+align = 1
+
+[node name="panelContainer3" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers"]
+margin_left = 30.0
+margin_right = 41.0
+margin_bottom = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
+
+[node name="label3" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers/panelContainer3"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 10.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.909804, 0.682353, 0.717647, 1 )
+text = "3"
+align = 1
+
+[node name="panelContainer4" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers"]
+margin_left = 45.0
+margin_right = 56.0
+margin_bottom = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
+
+[node name="label4" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers/panelContainer4"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 10.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "4"
+align = 1
+
+[node name="panelContainer5" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers"]
+margin_left = 60.0
+margin_right = 72.0
+margin_bottom = 2.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 4 )
+
+[node name="label4" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/marginCtnNumbers/hboxNumbers/panelContainer5"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 11.0
+margin_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.517647, 0.690196, 0.509804, 1 )
+text = "5"
+align = 1
+
+[node name="panelStructures" type="PanelContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi"]
+margin_left = 73.0
+margin_top = 242.0
+margin_right = 177.0
+margin_bottom = 266.0
+mouse_filter = 1
+size_flags_horizontal = 4
+size_flags_vertical = 8
+custom_styles/panel = SubResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hbox" type="HBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures"]
+margin_left = 4.0
+margin_top = 3.0
+margin_right = 100.0
+margin_bottom = 23.0
+rect_min_size = Vector2( 96, 0 )
+alignment = 1
+script = ExtResource( 21 )
+
+[node name="vBoxContainer" type="VBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox"]
+margin_right = 16.0
+margin_bottom = 20.0
+
+[node name="btnPhoto" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer"]
+modulate = Color( 0.988235, 0.74902, 0.286275, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 7 )
+expand = true
+script = ExtResource( 11 )
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "20"
+align = 1
+
+[node name="vBoxContainer2" type="VBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox"]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 20.0
+
+[node name="btnHoming" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2"]
+modulate = Color( 0.968627, 0.498039, 0, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 9 )
+expand = true
+script = ExtResource( 11 )
+type = 1
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "50"
+align = 1
+
+[node name="vBoxContainer5" type="VBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox"]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 20.0
+
+[node name="btnShield" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5"]
+modulate = Color( 0.909804, 0.682353, 0.717647, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 10 )
+expand = true
+script = ExtResource( 11 )
+type = 4
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "50"
+align = 1
+
+[node name="vBoxContainer3" type="VBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox"]
+margin_left = 60.0
+margin_right = 76.0
+margin_bottom = 20.0
+
+[node name="btnLaser" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3"]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 11 )
+expand = true
+script = ExtResource( 11 )
+type = 2
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "75"
+align = 1
+
+[node name="vBoxContainer4" type="VBoxContainer" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox"]
+margin_left = 80.0
+margin_right = 96.0
+margin_bottom = 20.0
+
+[node name="btnSpread" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4"]
+modulate = Color( 0.517647, 0.690196, 0.509804, 1 )
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = SubResource( 12 )
+expand = true
+script = ExtResource( 11 )
+type = 3
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4"]
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "100"
+align = 1
+
+[node name="tween" type="Tween" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi"]
+
+[node name="panelEnergy" type="PanelContainer" parent="debugUi/debugControl/marginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 32.0
+margin_bottom = 20.0
+mouse_filter = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 13 )
+
+[node name="hBoxContainer" type="HBoxContainer" parent="debugUi/debugControl/marginContainer/panelEnergy"]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 28.0
+margin_bottom = 17.0
+script = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="textureRect" type="TextureRect" parent="debugUi/debugControl/marginContainer/panelEnergy/hBoxContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 8 )
+
+[node name="label" type="Label" parent="debugUi/debugControl/marginContainer/panelEnergy/hBoxContainer"]
+margin_left = 20.0
+margin_right = 27.0
+margin_bottom = 16.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+text = "0"
+script = SubResource( 16 )
+
+[node name="panelScore" type="PanelContainer" parent="debugUi/debugControl/marginContainer"]
+margin_left = 243.0
+margin_top = 2.0
+margin_right = 252.0
+margin_bottom = 20.0
+mouse_filter = 1
+size_flags_horizontal = 8
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 17 )
+
+[node name="hBoxContainer" type="HBoxContainer" parent="debugUi/debugControl/marginContainer/panelScore"]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 9.0
+margin_bottom = 17.0
+alignment = 1
+script = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="debugUi/debugControl/marginContainer/panelScore/hBoxContainer"]
+margin_right = 7.0
+margin_bottom = 16.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 15 )
+text = "0"
+align = 2
+script = SubResource( 18 )
+
+[node name="strTitle" parent="debugUi/debugControl" instance=ExtResource( 15 )]
+
+[node name="controlGuide" parent="debugUi/debugControl" instance=ExtResource( 17 )]
+
+[node name="controlGameOver" type="Control" parent="debugUi"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="marginContainer" type="MarginContainer" parent="debugUi/controlGameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panelContainer" type="PanelContainer" parent="debugUi/controlGameOver/marginContainer"]
+margin_left = 127.0
+margin_top = 135.0
+margin_right = 129.0
+margin_bottom = 137.0
+mouse_filter = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_styles/panel = SubResource( 20 )
+
+[node name="marginContainer" type="MarginContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 95.0
+margin_bottom = 154.0
+mouse_filter = 2
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="vBoxContainer" type="VBoxContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 86.0
+margin_bottom = 145.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="strGameOver" type="Label" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer"]
+margin_right = 78.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "GAME OVER"
+align = 1
+
+[node name="hs" type="HSeparator" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 18.0
+margin_right = 78.0
+margin_bottom = 22.0
+size_flags_vertical = 3
+
+[node name="ctnScores" type="CenterContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer"]
+margin_top = 26.0
+margin_right = 78.0
+margin_bottom = 105.0
+script = SubResource( 22 )
+
+[node name="vboxEnd" type="VBoxContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores"]
+margin_right = 78.0
+margin_bottom = 79.0
+
+[node name="strFinalScore" type="Label" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd"]
+margin_right = 78.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "FINAL SCORE:"
+align = 1
+
+[node name="strScore" type="Label" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd"]
+margin_top = 18.0
+margin_right = 78.0
+margin_bottom = 32.0
+custom_fonts/font = SubResource( 21 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "0000"
+align = 1
+script = SubResource( 23 )
+
+[node name="hs2" type="HSeparator" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_top = 36.0
+margin_right = 78.0
+margin_bottom = 40.0
+size_flags_vertical = 3
+
+[node name="vboxSendScore" type="VBoxContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd"]
+margin_top = 44.0
+margin_right = 78.0
+margin_bottom = 79.0
+script = SubResource( 24 )
+
+[node name="lineEdit" type="LineEdit" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd/vboxSendScore"]
+margin_right = 78.0
+margin_bottom = 18.0
+custom_styles/normal = SubResource( 25 )
+custom_fonts/font = SubResource( 26 )
+align = 1
+max_length = 18
+placeholder_text = "Your name here"
+
+[node name="btnSendScore" type="Button" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxEnd/vboxSendScore"]
+margin_left = 16.0
+margin_top = 22.0
+margin_right = 61.0
+margin_bottom = 35.0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 27 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 29 )
+custom_fonts/font = SubResource( 30 )
+custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )
+text = "SEND SCORE"
+
+[node name="vboxLeaderboards" type="VBoxContainer" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores"]
+visible = false
+margin_left = 1.0
+margin_top = 36.0
+margin_right = 76.0
+margin_bottom = 43.0
+script = ExtResource( 23 )
+
+[node name="strLoading" type="Label" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer/ctnScores/vboxLeaderboards"]
+margin_right = 75.0
+margin_bottom = 7.0
+custom_fonts/font = SubResource( 31 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "Loading highscores..."
+
+[node name="hs3" type="HSeparator" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer"]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+margin_top = 109.0
+margin_right = 78.0
+margin_bottom = 113.0
+size_flags_vertical = 3
+custom_styles/separator = SubResource( 32 )
+
+[node name="btnRetry" type="Button" parent="debugUi/controlGameOver/marginContainer/panelContainer/marginContainer/vBoxContainer"]
+margin_top = 117.0
+margin_right = 78.0
+margin_bottom = 137.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 0
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/disabled = SubResource( 36 )
+custom_styles/normal = SubResource( 37 )
+custom_fonts/font = SubResource( 38 )
+custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )
+text = "RETRY"
+script = SubResource( 39 )
+
+[node name="tween" type="Tween" parent="debugUi/controlGameOver"]
+
+[node name="bg" type="Sprite" parent="."]
+modulate = Color( 0, 0.188235, 0.286275, 1 )
+scale = Vector2( 10000, 10000 )
+z_index = -512
+texture = ExtResource( 7 )
+
+[node name="bgParticles" parent="." instance=ExtResource( 12 )]
+
+[node name="debug2d" type="Node2D" parent="."]
+z_index = 10
+script = SubResource( 40 )
+
+[node name="cameraLayer" parent="debug2d" instance=ExtResource( 13 )]
+
+[node name="planetBase" type="Node2D" parent="debug2d"]
+script = ExtResource( 3 )
+
+[node name="planetCoreBg" type="Sprite" parent="debug2d/planetBase"]
+modulate = Color( 0, 0.188235, 0.286275, 1 )
+scale = Vector2( 2.2, 2.2 )
+texture = ExtResource( 6 )
+
+[node name="planetCore" parent="debug2d/planetBase" instance=ExtResource( 16 )]
+
+[node name="planetSurface" parent="debug2d/planetBase" instance=ExtResource( 9 )]
+
+[node name="structures" type="Node2D" parent="debug2d/planetBase"]
+script = ExtResource( 5 )
+
+[node name="sun" parent="debug2d" instance=ExtResource( 4 )]
+
+[node name="strPlanetLife" type="Label" parent="debug2d"]
+margin_left = -53.0
+margin_top = -56.0
+margin_right = 59.0
+margin_bottom = 56.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 41 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+text = "20"
+align = 1
+valign = 1
+script = SubResource( 42 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="spawner" parent="." instance=ExtResource( 1 )]
