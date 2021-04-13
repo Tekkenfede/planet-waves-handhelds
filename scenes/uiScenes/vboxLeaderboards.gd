@@ -4,7 +4,7 @@ const scoreline=preload("res://scenes/uiScenes/hboxScoreline.tscn")
 func _ready():pass
 
 func loadScoreboard():
-	yield(SilentWolf.Scores.get_high_scores(5), "sw_scores_received")
+	yield(SilentWolf.Scores.get_high_scores(10), "sw_scores_received")
 	$strLoading.queue_free()
 	var idx=1
 	for score in SilentWolf.Scores.scores:

@@ -6,6 +6,7 @@ var state=States.Creation
 const fEnergyGain=2
 var fShieldHealth=100
 var bMouseIn=false
+var bDeletionQueued:=false
 const homingProjectile=preload("res://scenes/homingProjectile.tscn")
 const laserBeam=preload("res://scenes/laserBeam.tscn")
 const spreadBullet=preload("res://scenes/spreadBullet.tscn")
@@ -17,9 +18,9 @@ const sprMissingEnergy=preload("res://scenes/sprMissingEnergy.tscn")
 var bCooldown=true
 var dictEnergyCosts={
 	Types.Photo:0,
-	Types.Homing:10,
-	Types.Laser:5,
-	Types.Spread:15,
+	Types.Homing:6,
+	Types.Laser:2,
+	Types.Spread:10,
 	Types.Shield:0
 }
 var dictCollisionPolygons={
@@ -44,8 +45,8 @@ var dictCollisionPolygons={
 			Vector2(-8,0)
 		]),
 }
-onready var nPanelGuide=$panelGuide
-onready var nPanelClickToDelete=$panelClickToDelete
+onready var nPanelGuide=$layerControl/panelGuide
+onready var nPanelClickToDelete=$layerControl/panelClickToDelete
 onready var nSprReference=$sprite/sprReference
 func _ready():
 	spawn()
@@ -55,26 +56,33 @@ func _ready():
 	$sprite.visible=true
 	$sprite/sprReference.visible=false
 	$timerCooldown.start()
+# warning-ignore:return_value_discarded
 	self.connect("mouse_entered",self,'mouseEnter')
+# warning-ignore:return_value_discarded
 	self.connect("mouse_exited",self,'mouseExit')
 #	nPanelClickToDelete.visible=false
+# warning-ignore:return_value_discarded
 	$enemyDetection.connect("body_entered",self,'bodyEnter')
 	set_process(true)
 func _process(delta):
 	self.rotation=self.global_position.angle()+PI/2-global.nPlanetBase.rotation
-	nPanelClickToDelete.rect_rotation=-rad2deg(self.rotation+global.nPlanetBase.rotation)
+#	nPanelClickToDelete.rect_rotation=-rad2deg(self.rotation+global.nPlanetBase.rotation)
 	nPanelClickToDelete.rect_global_position=self.global_position+Vector2(36,-8)
+#	$layerControl/panelClickToDeleteConfirmation.rect_rotation=-rad2deg(self.rotation+global.nPlanetBase.rotation)
+	$layerControl/panelClickToDeleteConfirmation.rect_global_position=self.global_position+Vector2(36,-8)
 	if state==States.Creation:
 		stateRoutineCreation(delta)
 	elif state==States.Docked:
 		stateRoutineDocked(delta)
 	elif state==States.GoAway:
 		self.rotation+=delta*PI
+# warning-ignore:unused_argument
 func stateRoutineCreation(delta):
+# warning-ignore:unused_variable
 	var fR=self.get_global_mouse_position().length()
 	var fA=self.get_global_mouse_position().angle();fA=deg2rad(int(rad2deg(fA))%180)
 	self.global_position=(global.fPlanetRadius+nSprReference.texture.get_size().y*nSprReference.scale.y*0.5)*Vector2(cos(fA),sin(fA))
-	nPanelGuide.rect_rotation=-rad2deg(self.rotation+global.nPlanetBase.rotation)
+#	nPanelGuide.rect_rotation=-rad2deg(self.rotation+global.nPlanetBase.rotation)
 	nPanelGuide.rect_global_position=self.global_position+Vector2(36,-64)
 	if Input.is_action_just_pressed("ui_rmb"):
 		if self.type==Types.Photo:global.fEnergy+=20
@@ -82,7 +90,7 @@ func stateRoutineCreation(delta):
 		elif self.type==Types.Spread:global.fEnergy+=100
 		elif self.type==Types.Homing:global.fEnergy+=50
 		elif self.type==Types.Laser:global.fEnergy+=75
-		$shieldArea/collisionShape2D.disabled=true
+#		$shieldArea/collisionShape2D.disabled=true
 		global.bTowerQueued=false
 		self.set_process(false)
 		self.goAway()
@@ -91,14 +99,16 @@ func stateRoutineCreation(delta):
 	else:
 		self.modulate=Color('#ffffffaa')
 		if Input.is_action_just_pressed('ui_lmb'):
-			$sprite.modulate.a=1
 			self.state=self.States.Docked
-			$panelGuide.queue_free()
+			$animationPlayer.play("dock")
+			$sprite.modulate.a=1
+#			self.state=self.States.Docked
+			$layerControl/panelGuide.queue_free()
 			global.bTowerQueued=false
 			if self.type!=Types.Photo:$line2D.modulate.a=0
 			if self.type==Types.Shield:$shieldArea/collisionShape2D.disabled=false
 			if self.type==Types.Photo:global.emit_signal("photoPlaced")
-			$animationPlayer.play("dock")
+#			$animationPlayer.play("dock")
 func addSfxTowerSet():
 	global.nDebug2droot.add_child(sfxTowerSet.instance())
 func stateRoutineDocked(delta):
@@ -107,9 +117,20 @@ func stateRoutineDocked(delta):
 	elif self.type==Types.Laser:stateRoutineLaser(delta)
 	elif self.type==Types.Spread:stateRoutineSpread(delta)
 	elif self.type==Types.Shield:stateRoutineShield(delta)
+	
+	if Input.is_action_just_pressed('ui_rmb') and self.bDeletionQueued:
+		self.bDeletionQueued=false
+		$layerControl/panelClickToDeleteConfirmation.visible=false
 	if bMouseIn and Input.is_action_just_pressed("ui_lmb"):
-		self.set_process(false)
-		self.goAway()
+		if self.bDeletionQueued:
+			self.set_process(false)
+			addSfxTowerSet()
+			self.goAway()
+		else:
+			self.bDeletionQueued=true
+			$layerControl/panelClickToDelete.visible=false
+			$layerControl/panelClickToDeleteConfirmation.visible=true
+
 
 func findClosestEnemy():
 	var closestEnemy=null
@@ -205,16 +226,18 @@ func goAway():
 	$tween.interpolate_property(self,'scale',self.scale,Vector2(),0.44,Tween.TRANS_BACK,Tween.EASE_IN)
 	$tween.start()
 	$tween.connect("tween_all_completed",self,'queue_free')
-func shakeScreen():global.nCamera.medShake()
+func shakeScreen():
+#	print_debug('ads')
+	global.nCamera.medShake()
 func mouseEnter():
-	print_debug('Tower: mouse entered')
+	#print_debug('Tower: mouse entered')
 	if self.state!=self.States.Creation:
 		nPanelClickToDelete.visible=true
 	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	self.bMouseIn=true
 	$line2D.modulate.a=0.33
 func mouseExit():
-	print_debug('Tower: mouse exited')
+	#print_debug('Tower: mouse exited')
 	nPanelClickToDelete.visible=false
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	self.bMouseIn=false
@@ -245,7 +268,9 @@ func stateRoutineHoming(delta):
 	if not self.bCooldown:
 		if global.fEnergy>=self.dictEnergyCosts[self.Types.Homing]:
 			var closestEnemy=findClosestEnemy()
-			if closestEnemy!=null:homingShoot(closestEnemy)
+			if closestEnemy!=null:
+				if not closestEnemy.is_in_group('Marked'):
+					homingShoot(closestEnemy)
 		else:
 			self.bCooldown=true
 			$timerCooldown.start()
@@ -278,6 +303,7 @@ func stateRoutineSpread(delta):
 
 func homingShoot(target):
 	var closestEnemy=target
+	target.add_to_group('Marked')
 	global.fEnergy-=self.dictEnergyCosts[self.Types.Homing]
 	self.bCooldown=true
 	var aa=(-$cannon.global_position+closestEnemy.global_position).angle()

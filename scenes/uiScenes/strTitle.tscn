@@ -1,17 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://resources/fonts/Runners.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://resources/placeholderTextures/lightCircle.png" type="Texture" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-outline_size = 1
-outline_color = Color( 0.917647, 0.886275, 0.717647, 1 )
-extra_spacing_top = -3
-extra_spacing_char = 4
-font_data = ExtResource( 1 )
-
-[sub_resource type="GDScript" id=4]
-script/source = "extends Label
-func _ready():self.queue_free()"
+[sub_resource type="GDScript" id=2]
+script/source = "extends Control
+func _ready():
+	self.visible=true
+	global.connect(\"photoPlaced\",self,'goAway')
+func goAway():
+	$tween.interpolate_property(self,'modulate:a',1,0,0.3,Tween.TRANS_QUINT,Tween.EASE_IN)
+	$tween.start()
+	yield($tween,\"tween_all_completed\")
+	self.queue_free()
+"
 
 [sub_resource type="DynamicFont" id=3]
 outline_size = 3
@@ -20,29 +22,43 @@ extra_spacing_top = -2
 extra_spacing_bottom = -2
 font_data = ExtResource( 1 )
 
-[node name="strTitle" type="Label"]
-visible = false
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+extra_spacing_top = -3
+extra_spacing_char = 4
+font_data = ExtResource( 1 )
+
+[node name="strTitle" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 3.0
-margin_top = 2.0
-margin_right = 3.0
-margin_bottom = 2.0
+margin_left = 2.8316
+margin_top = 2.83163
+margin_right = 2.8316
+margin_bottom = 2.83163
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
-align = 1
-valign = 1
-script = SubResource( 4 )
+script = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0.188235, 0.286275, 1 )
+position = Vector2( 128, 136 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": ""
+}
+
 [node name="strTitle2" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
+margin_left = 102.0
+margin_top = 130.0
+margin_right = 155.0
+margin_bottom = 141.0
+size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
@@ -54,9 +70,11 @@ __meta__ = {
 }
 
 [node name="strTitle3" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
+margin_left = 84.0
+margin_top = 115.0
+margin_right = 172.0
+margin_bottom = 157.0
+size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )
@@ -68,3 +86,5 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="tween" type="Tween" parent="."]

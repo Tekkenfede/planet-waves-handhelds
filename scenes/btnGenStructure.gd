@@ -31,9 +31,9 @@ func _process(delta):
 			self.rect_scale=Vector2(1,1)+Vector2(0.1,0.1)*pow(sin(t*PI/128),2)
 			
 	if global.fEnergy<self.dPrices[self.type]:
-		self.self_modulate=Color('#555555')
+		self.modulate=Color('#555555')
 	else:
-		self.self_modulate=Color('#ffffff')
+		self.modulate=Color('#ffffff')
 func mouseEnter():
 	twn.interpolate_property(self,'rect_scale',self.rect_scale,Vector2(1.2,1.2),0.5,Tween.TRANS_CUBIC,Tween.EASE_OUT)
 	twn.start()

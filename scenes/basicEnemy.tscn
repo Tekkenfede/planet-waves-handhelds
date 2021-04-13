@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://resources/textures/sprites/bug_enemy.png" type="Texture" id=1]
 [ext_resource path="res://scenes/basicEnemy.gd" type="Script" id=2]
 [ext_resource path="res://resources/textures/star_05.png" type="Texture" id=3]
 [ext_resource path="res://resources/textures/sprites/bug_enemyNormal.png" type="Texture" id=4]
+[ext_resource path="res://scenes/enemyIndicator.gd" type="Script" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -97,4 +98,19 @@ one_shot = true
 autostart = true
 
 [node name="tween" type="Tween" parent="."]
+
+[node name="enemyIndicator" type="Polygon2D" parent="."]
+position = Vector2( 36.5268, 0 )
+scale = Vector2( 2, 1 )
+z_index = 4096
+z_as_relative = false
+color = Color( 0.839216, 0.156863, 0.156863, 1 )
+polygon = PoolVector2Array( 12, -8, 12, 8, 24, 0 )
+script = ExtResource( 5 )
+
+[node name="polygon2D2" type="Polygon2D" parent="enemyIndicator"]
+position = Vector2( 3.33334, 0 )
+scale = Vector2( 0.8, 0.8 )
+color = Color( 0, 0.188235, 0.286275, 1 )
+polygon = PoolVector2Array( 12, -8, 12, 8, 24, 0 )
 [connection signal="timeout" from="timerAttack" to="." method="_on_timerAttack_timeout"]

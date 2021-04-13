@@ -39,9 +39,9 @@ func _physics_process(delta):
 func die():
 	global.iScore+=20
 	global.iNumberOfKills+=1
-	$particles2D.emitting=true
-	$collisionShape2D.disabled=true
-	$area2D/collisionPolygon2D.disabled=true
+#	$particles2D.emitting=true
+#	$collisionShape2D.disabled=true
+#	$area2D/collisionPolygon2D.disabled=true
 	var i=fxExplosions.instance()
 	i.global_position=self.fRadius*Vector2(cos(self.fAngle),sin(self.fAngle))#Vector2()#self.global_position
 	global.nDebug2droot.add_child(i)

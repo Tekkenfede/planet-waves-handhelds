@@ -17,7 +17,7 @@ func spawn():
 	var i=basicEnemy.instance()
 	i.global_position=self.global_position
 	get_parent().add_child(i)
-	$timer.wait_time=1.5 + 2.5*clamp(exp(-global.iScore/50),0,1)
+	$timer.wait_time=1.5 + 3.5*clamp(exp(-global.iScore/50),0,1)
 	$timer.start()
 	if randf()<0.2:
 		var j=bgMeteor.instance()
@@ -38,5 +38,5 @@ __meta__ = {
 }
 
 [node name="timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 30.0
 [connection signal="timeout" from="timer" to="." method="spawn"]

@@ -31,6 +31,8 @@ var iScore=0
 var nWhiteRect
 var bGameOver=false
 var scoreId=''
+var nCtnStructures
+var apiKey=''
 signal oneKill
 signal threeKills
 signal fiveKills
@@ -49,8 +51,13 @@ func resetGame():
 #	self.bTutorialDone=true
 	get_tree().reload_current_scene()
 func _ready():
+	var f=File.new()
+	f.open('res://.env',File.READ)
+	self.apiKey=f.get_line()
+	f.close()
+	
 	SilentWolf.configure({
-	"api_key": "tp06C94c9Q80yZtcqE7bX3WfYvH522az3rc35Os3",
+	"api_key": self.apiKey,
 	"game_id": "PlanetWaves",
 	"game_version": "1.0.0",
 	"log_level": 1
@@ -67,9 +74,10 @@ func _ready():
 	set_process(true)
 func _process(delta):
 	if OS.is_debug_build() and Input.is_action_just_pressed('ui_debug'):
-		#self.iPlanetLife-=20
-		self.fEnergy-=1000
-	if Input.is_action_just_pressed("ui_mute"):
+		self.iPlanetLife-=20
+		#self.fEnergy-=1000
+		self.iScore=10000
+	if Input.is_action_just_pressed("ui_mute") and not self.bGameOver:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index('Master'),!AudioServer.is_bus_mute(AudioServer.get_bus_index('Master')))
 		pass
 	if not bGameOver and self.iPlanetLife<=0:

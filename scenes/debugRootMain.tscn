@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://scenes/etc/spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://scenes/debugControl.gd" type="Script" id=22]
 [ext_resource path="res://scenes/uiScenes/vboxLeaderboards.gd" type="Script" id=23]
 [ext_resource path="res://scenes/etc/splashFadeAway.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/etc/pauseLayer.tscn" type="PackedScene" id=25]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
@@ -50,6 +51,7 @@ script/source = "extends MarginContainer
 var bHidden=false
 const sfxNewStructure=preload(\"res://scenes/sfxNewStructure.tscn\")
 func _ready():
+	global.nCtnStructures=self
 	set_process(true)
 func _process(delta):
 	if Input.is_action_just_pressed(\"ui_hideStructures\"):
@@ -193,7 +195,7 @@ var iValue=0
 func _ready():set_process(true)
 func _process(delta):
 	iValue=lerp(iValue,global.iScore,0.2)
-	self.text=str(ceil(self.iValue))
+	self.text='Score: '+str(ceil(self.iValue))
 "
 
 [sub_resource type="GDScript" id=19]
@@ -464,9 +466,17 @@ __meta__ = {
 "_edit_vertical_guides_": [ 84.0 ]
 }
 
+[node name="pauseLayer" parent="." instance=ExtResource( 25 )]
+
 [node name="splashFadeAway" parent="." instance=ExtResource( 24 )]
+layer = 127
 
 [node name="layerWhite" parent="." instance=ExtResource( 18 )]
+
+[node name="layerTitle" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="strTitle" parent="layerTitle" instance=ExtResource( 15 )]
 
 [node name="debugUi" type="CanvasLayer" parent="."]
 
@@ -528,6 +538,7 @@ mouse_filter = 2
 margin_right = 250.0
 margin_bottom = 266.0
 mouse_filter = 2
+size_flags_horizontal = 4
 script = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -671,6 +682,31 @@ margin_right = 16.0
 margin_bottom = 20.0
 
 [node name="btnPhoto" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+expand = true
+script = ExtResource( 11 )
+
+[node name="texBg" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer/btnPhoto"]
+modulate = Color( 0, 0.356863, 0.490196, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer/btnPhoto"]
 modulate = Color( 0.988235, 0.74902, 0.286275, 1 )
 margin_right = 16.0
 margin_bottom = 16.0
@@ -679,7 +715,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 7 )
 expand = true
-script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer"]
 margin_top = 20.0
@@ -696,6 +734,32 @@ margin_right = 36.0
 margin_bottom = 20.0
 
 [node name="btnHoming" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+expand = true
+script = ExtResource( 11 )
+type = 1
+
+[node name="texBg" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2/btnHoming"]
+modulate = Color( 0, 0.356863, 0.490196, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2/btnHoming"]
 modulate = Color( 0.968627, 0.498039, 0, 1 )
 margin_right = 16.0
 margin_bottom = 16.0
@@ -704,8 +768,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 9 )
 expand = true
-script = ExtResource( 11 )
-type = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer2"]
 margin_top = 20.0
@@ -722,6 +787,32 @@ margin_right = 56.0
 margin_bottom = 20.0
 
 [node name="btnShield" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+expand = true
+script = ExtResource( 11 )
+type = 4
+
+[node name="texBg" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5/btnShield"]
+modulate = Color( 0, 0.356863, 0.490196, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5/btnShield"]
 modulate = Color( 0.909804, 0.682353, 0.717647, 1 )
 margin_right = 16.0
 margin_bottom = 16.0
@@ -730,8 +821,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 10 )
 expand = true
-script = ExtResource( 11 )
-type = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer5"]
 margin_top = 20.0
@@ -748,6 +840,32 @@ margin_right = 76.0
 margin_bottom = 20.0
 
 [node name="btnLaser" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+expand = true
+script = ExtResource( 11 )
+type = 2
+
+[node name="texBg" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3/btnLaser"]
+modulate = Color( 0, 0.356863, 0.490196, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3/btnLaser"]
 modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
 margin_right = 16.0
 margin_bottom = 16.0
@@ -756,8 +874,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 11 )
 expand = true
-script = ExtResource( 11 )
-type = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer3"]
 margin_top = 20.0
@@ -774,6 +893,32 @@ margin_right = 96.0
 margin_bottom = 20.0
 
 [node name="btnSpread" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+expand = true
+script = ExtResource( 11 )
+type = 3
+
+[node name="texBg" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4/btnSpread"]
+modulate = Color( 0, 0.356863, 0.490196, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureButton" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4/btnSpread"]
 modulate = Color( 0.517647, 0.690196, 0.509804, 1 )
 margin_right = 16.0
 margin_bottom = 16.0
@@ -782,8 +927,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 2
 texture_normal = SubResource( 12 )
 expand = true
-script = ExtResource( 11 )
-type = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="debugUi/debugControl/marginContainer/control/ctnStructuresUi/panelStructures/hbox/vBoxContainer4"]
 margin_top = 20.0
@@ -833,7 +979,7 @@ text = "0"
 script = SubResource( 16 )
 
 [node name="panelScore" type="PanelContainer" parent="debugUi/debugControl/marginContainer"]
-margin_left = 243.0
+margin_left = 200.0
 margin_top = 2.0
 margin_right = 252.0
 margin_bottom = 20.0
@@ -846,7 +992,7 @@ custom_styles/panel = SubResource( 17 )
 modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
 margin_left = 2.0
 margin_top = 1.0
-margin_right = 9.0
+margin_right = 52.0
 margin_bottom = 17.0
 alignment = 1
 script = SubResource( 14 )
@@ -855,21 +1001,18 @@ __meta__ = {
 }
 
 [node name="label2" type="Label" parent="debugUi/debugControl/marginContainer/panelScore/hBoxContainer"]
-margin_right = 7.0
+margin_right = 50.0
 margin_bottom = 16.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 15 )
-text = "0"
+text = "Score: 0"
 align = 2
 script = SubResource( 18 )
-
-[node name="strTitle" parent="debugUi/debugControl" instance=ExtResource( 15 )]
 
 [node name="controlGuide" parent="debugUi/debugControl" instance=ExtResource( 17 )]
 
 [node name="controlGameOver" type="Control" parent="debugUi"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -895,10 +1038,10 @@ __meta__ = {
 }
 
 [node name="panelContainer" type="PanelContainer" parent="debugUi/controlGameOver/marginContainer"]
-margin_left = 127.0
-margin_top = 135.0
-margin_right = 129.0
-margin_bottom = 137.0
+margin_left = 80.0
+margin_top = 58.0
+margin_right = 176.0
+margin_bottom = 213.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -985,6 +1128,8 @@ margin_right = 78.0
 margin_bottom = 18.0
 custom_styles/normal = SubResource( 25 )
 custom_fonts/font = SubResource( 26 )
+custom_colors/cursor_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
 align = 1
 max_length = 18
 placeholder_text = "Your name here"
@@ -1051,6 +1196,7 @@ script = SubResource( 39 )
 modulate = Color( 0, 0.188235, 0.286275, 1 )
 scale = Vector2( 10000, 10000 )
 z_index = -512
+z_as_relative = false
 texture = ExtResource( 7 )
 
 [node name="bgParticles" parent="." instance=ExtResource( 12 )]
@@ -1063,6 +1209,7 @@ script = SubResource( 40 )
 
 [node name="planetBase" type="Node2D" parent="debug2d"]
 script = ExtResource( 3 )
+fRadius = 190.0
 
 [node name="planetCoreBg" type="Sprite" parent="debug2d/planetBase"]
 modulate = Color( 0, 0.188235, 0.286275, 1 )
