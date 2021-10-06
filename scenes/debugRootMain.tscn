@@ -1224,6 +1224,7 @@ texture = ExtResource( 6 )
 script = ExtResource( 5 )
 
 [node name="sun" parent="debug2d" instance=ExtResource( 4 )]
+position = Vector2( 0, -0.374573 )
 
 [node name="strPlanetLife" type="Label" parent="debug2d"]
 margin_left = -53.0
