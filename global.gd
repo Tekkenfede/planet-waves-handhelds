@@ -37,7 +37,9 @@ signal oneKill
 signal threeKills
 signal fiveKills
 signal sevenKills
+# warning-ignore:unused_signal
 signal photoPlaced
+# warning-ignore:unused_signal
 signal clearActors
 signal gameOver
 func resetGame():
@@ -46,14 +48,15 @@ func resetGame():
 	self.iPlanetLife=10
 	self.fEnergy=20
 	self.iScore=0
-	self.bGameOver=false
-	self.bTowerQueued=false
+	self.bGameOver = false
+	self.bTowerQueued = false
 #	self.bTutorialDone=true
-	get_tree().reload_current_scene()
-func _ready():
+	var _v = get_tree().reload_current_scene()
+
+func _ready() -> void:
 	var f=File.new()
-	f.open('res://.env',File.READ)
-	self.apiKey=f.get_line()
+	f.open('res://.env', File.READ)
+	self.apiKey = f.get_line()
 	f.close()
 	
 	SilentWolf.configure({
@@ -63,16 +66,12 @@ func _ready():
 	"log_level": 1
 	})
 	
-#	SilentWolf.configure_scores({
-#		"open_scene_on_close": "res://scenes/MainPage.tscn"
-#	})
-
-	
 	if OS.is_debug_build():
 		self.fEnergy+=1000
 	add_child(sfxMusic.instance())
 	set_process(true)
-func _process(delta):
+	
+func _process(_delta:float) -> void:
 	if OS.is_debug_build() and Input.is_action_just_pressed('ui_debug'):
 		self.iPlanetLife-=20
 		#self.fEnergy-=1000

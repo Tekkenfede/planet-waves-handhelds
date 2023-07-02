@@ -2,17 +2,18 @@ extends KinematicBody2D
 var fRadius
 var fAngle
 var fTargetRadius
-var vVelocity=Vector2()
+var vVelocity = Vector2()
 enum States {Orbit,Attack}
-var state=States.Orbit
-const fSpeed=10
-const fAngularSpeed=PI/18
-const fxAttack=preload("res://scenes/fxAttack.tscn")
-const fxExplosions=preload("res://scenes/fxExplosions.tscn")
-const sfxEnemyDeath=preload("res://scenes/sfxEnemyDeath.tscn")
-func _ready():
-	global.connect('clearActors',self,'queue_free')
-	var tt=rand_range(5.0,7.0)
+var state = States.Orbit
+const fSpeed := 10
+const fAngularSpeed := PI/18
+const fxAttack := preload("res://scenes/fxAttack.tscn")
+const fxExplosions := preload("res://scenes/fxExplosions.tscn")
+const sfxEnemyDeath := preload("res://scenes/sfxEnemyDeath.tscn")
+
+func _ready() -> void:
+	var _v = global.connect('clearActors',self,'queue_free')
+	var tt = rand_range(5.0,7.0)
 	$timerAttack.wait_time=tt
 	$timerAttack.start()
 	self.fRadius=self.global_position.length()

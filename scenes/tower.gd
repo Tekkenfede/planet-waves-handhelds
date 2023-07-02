@@ -193,7 +193,8 @@ func spawn():
 		#$sprite/sprShield.queue_free()
 		$lightOccPhoto.queue_free()
 		$lightOccTower.queue_free()
-		$shieldArea.connect("body_entered",self,'shieldTakeDamage')
+		var _v = $shieldArea.connect("body_entered",self,'shieldTakeDamage')
+
 func shieldTakeDamage(b):
 	if b.is_in_group('Enemy'):
 		if b.is_in_group('Meteor'):
@@ -217,15 +218,15 @@ func setupLine2d():
 	$tween.start()
 func selectColor():
 	return
-	if self.type==Types.Photo:$sprite.modulate=global.colors['yellow']
-	elif self.type==Types.Laser:$sprite.modulate=global.colors['white']
-	elif self.type==Types.Homing:$sprite.modulate=global.colors['orange']
-	elif self.type==Types.Spread:$sprite.modulate=global.colors['green']
+	#if self.type==Types.Photo:$sprite.modulate=global.colors['yellow']
+	#elif self.type==Types.Laser:$sprite.modulate=global.colors['white']
+	#elif self.type==Types.Homing:$sprite.modulate=global.colors['orange']
+	#elif self.type==Types.Spread:$sprite.modulate=global.colors['green']
 func goAway():
 #	nPanelClickToDelete.visible=false
-	$tween.interpolate_property(self,'scale',self.scale,Vector2(),0.44,Tween.TRANS_BACK,Tween.EASE_IN)
-	$tween.start()
-	$tween.connect("tween_all_completed",self,'queue_free')
+	var _v = $tween.interpolate_property(self,'scale',self.scale,Vector2(),0.44,Tween.TRANS_BACK,Tween.EASE_IN)
+	_v = $tween.start()
+	_v = $tween.connect("tween_all_completed",self,'queue_free')
 func shakeScreen():
 #	print_debug('ads')
 	global.nCamera.medShake()
@@ -251,7 +252,7 @@ func bodyEnter(b):
 				b.die()
 func showOptions():
 	return
-	$controlOptions.show()
+	#$controlOptions.show()
 
 func stateRoutinePhoto(delta):
 	if $photocell.get_overlapping_areas().size()>0:
@@ -261,9 +262,11 @@ func stateRoutinePhoto(delta):
 	else:
 		$sprite/sprPhoto/photoParticles.emitting=false
 		$sprite.modulate=Color('#555555')
-func stateRoutineShield(delta):
+
+func stateRoutineShield(_delta:float) -> void:
 	$progressBar.value=lerp($progressBar.value,self.fShieldHealth,0.1)
-func stateRoutineHoming(delta):
+
+func stateRoutineHoming(_delta:float) -> void:
 	$progressBar.value=$timerCooldown.wait_time-$timerCooldown.time_left
 	if not self.bCooldown:
 		if global.fEnergy>=self.dictEnergyCosts[self.Types.Homing]:
@@ -272,12 +275,13 @@ func stateRoutineHoming(delta):
 				if not closestEnemy.is_in_group('Marked'):
 					homingShoot(closestEnemy)
 		else:
-			self.bCooldown=true
+			self.bCooldown = true
 			$timerCooldown.start()
 			var i=sprMissingEnergy.instance()
 			i.global_position=self.global_position
 			global.nDebug2droot.add_child(i)
-func stateRoutineLaser(delta):
+
+func stateRoutineLaser(_delta:float) -> void:
 	$progressBar.value=$timerCooldown.wait_time-$timerCooldown.time_left
 	if not self.bCooldown:
 		if global.fEnergy>=self.dictEnergyCosts[self.Types.Laser]:
@@ -289,7 +293,8 @@ func stateRoutineLaser(delta):
 			var i=sprMissingEnergy.instance()
 			i.global_position=self.global_position
 			global.nDebug2droot.add_child(i)
-func stateRoutineSpread(delta):
+
+func stateRoutineSpread(_delta:float) -> void:
 	$progressBar.value=$timerCooldown.wait_time-$timerCooldown.time_left
 	if not self.bCooldown:
 		if global.fEnergy>=self.dictEnergyCosts[self.Types.Spread]:

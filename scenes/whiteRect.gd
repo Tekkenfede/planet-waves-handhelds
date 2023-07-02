@@ -1,9 +1,11 @@
 extends ColorRect
-func _ready():
-	global.nWhiteRect=self
-	global.connect("gameOver",self,'gameOver')
-	self.modulate.a=0
-func gameOver():
+
+func _ready() -> void:
+	global.nWhiteRect = self
+	var _v = global.connect("gameOver",self,'gameOver')
+	self.modulate.a = 0
+
+func gameOver() -> void:
 	$tween.interpolate_property(self,'modulate:a',self.modulate.a,1,2.0,Tween.TRANS_QUINT,Tween.EASE_IN,1.0)
 	$tween.start()
 	yield($tween,"tween_all_completed")

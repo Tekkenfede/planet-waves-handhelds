@@ -1,9 +1,9 @@
 extends PanelContainer
 func _ready():
 	if global.bTutorialDone:self.queue_free()
-	global.connect("oneKill",self,'oneKill')
-	global.connect("threeKills",self,'threeKills')
-	global.connect("fiveKills",self,'fiveKills')
+	var _v = global.connect("oneKill",self,'oneKill')
+	_v = global.connect("threeKills",self,'threeKills')
+	_v = global.connect("fiveKills",self,'fiveKills')
 	global.nUnlockPanel=self
 func showMessage(message):
 	var targetY=240 if global.nCtnStructures.bHidden else 210

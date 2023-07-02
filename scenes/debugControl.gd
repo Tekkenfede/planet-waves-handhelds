@@ -1,5 +1,8 @@
 extends Control
-func _ready():global.connect("clearActors",self,'makeInvisible')
-func makeInvisible():
-	self.visible=false
+
+func _ready() -> void:
+	var _v = global.connect("clearActors", self, 'makeInvisible')
+	
+func makeInvisible() -> void:
+	self.visible = false
 	self.queue_free()

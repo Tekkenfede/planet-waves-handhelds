@@ -2,32 +2,39 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Position2D
-var fRadius:=0
-const bgMeteor:=preload(\"res://scenes/bgMeteor.tscn\")
-const basicEnemy:=preload(\"res://scenes/basicEnemy.tscn\")
-func _ready():
-	global.connect(\"photoPlaced\",self,'startTimer')
-	global.connect(\"clearActors\",self,'stop')
-	self.fRadius=1.66*global.RESOLUTION.length()
+
+var fRadius := 0
+const bgMeteor := preload(\"res://scenes/bgMeteor.tscn\")
+const basicEnemy := preload(\"res://scenes/basicEnemy.tscn\")
+
+func _ready() -> void:
+	var _v = global.connect(\"photoPlaced\",self,'startTimer')
+	_v = global.connect(\"clearActors\",self,'stop')
+# warning-ignore:narrowing_conversion
+	self.fRadius = 1.66*global.RESOLUTION.length()
 	if OS.is_debug_build():
 		$timer.wait_time=1.5
-func spawn():
-	var aa=rand_range(-PI,PI)
-	self.global_position=fRadius*Vector2(cos(aa),sin(aa))
-	var i=basicEnemy.instance()
-	i.global_position=self.global_position
+
+func spawn() -> void:
+	var aa = rand_range(-PI,PI)
+	self.global_position = fRadius*Vector2(cos(aa),sin(aa))
+	var i = basicEnemy.instance()
+	i.global_position = self.global_position
 	get_parent().add_child(i)
-	$timer.wait_time=1.5 + 3.5*clamp(exp(-global.iScore/50),0,1)
+	
+	$timer.wait_time = 1.5 + 3.5*clamp(exp(-global.iScore/50),0,1)
 	$timer.start()
-	if randf()<0.2:
-		var j=bgMeteor.instance()
-		j.global_position=self.global_position
+	if randf() < 0.2:
+		var j = bgMeteor.instance()
+		j.global_position = self.global_position
 		get_parent().add_child(j)
 		
-func startTimer():
+func startTimer() -> void:
 	$timer.start()
 	global.disconnect(\"photoPlaced\",self,'startTimer')
-func stop():$timer.stop()
+
+func stop() -> void:
+	$timer.stop()
 "
 
 [node name="spawner" type="Position2D"]
@@ -39,4 +46,5 @@ __meta__ = {
 
 [node name="timer" type="Timer" parent="."]
 wait_time = 30.0
+
 [connection signal="timeout" from="timer" to="." method="spawn"]

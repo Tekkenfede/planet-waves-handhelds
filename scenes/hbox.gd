@@ -1,15 +1,25 @@
 extends HBoxContainer
 
-func _ready():
-	global.connect("oneKill",self,'oneKill')
-	global.connect("threeKills",self,'threeKills')
-	global.connect("fiveKills",self,'fiveKills')
+func _ready() -> void:
+	var _v = global.connect("oneKill",self,'oneKill')
+	_v = global.connect("threeKills",self,'threeKills')
+	_v = global.connect("fiveKills",self,'fiveKills')
+	
 	if not global.bTutorialDone:
-		$vBoxContainer5.visible=false
-		$vBoxContainer3.visible=false
-		$vBoxContainer4.visible=false
+		$vboxShield.visible = false
+		$vboxLaser.visible = false
+		$vboxSpread.visible = false
+	
 	set_process(true)
-func _process(delta):pass
-func oneKill():$vBoxContainer5.visible=true
-func threeKills():$vBoxContainer3.visible=true
-func fiveKills():$vBoxContainer4.visible=true
+	
+func _process(_delta:float) -> void:
+	pass
+
+func oneKill() -> void:
+	$vboxShield.visible = true
+
+func threeKills() -> void:
+	$vboxLaser.visible = true
+
+func fiveKills() -> void:
+	$vboxSpread.visible = true

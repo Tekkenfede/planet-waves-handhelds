@@ -14,7 +14,7 @@ func _ready():
 	self.queue_free()
 "
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=6]
 content_margin_top = 2.0
 content_margin_bottom = 4.0
 bg_color = Color( 0, 0.188235, 0.286275, 1 )
@@ -28,8 +28,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 corner_detail = 1
-expand_margin_left = 8.0
-expand_margin_right = 8.0
+expand_margin_left = 16.0
+expand_margin_right = 16.0
 expand_margin_top = 16.0
 anti_aliasing = false
 
@@ -57,7 +57,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = SubResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_vertical_guides_": [ 245.0 ]
 }
 
 [node name="marginContainer" type="MarginContainer" parent="."]
@@ -70,20 +70,17 @@ custom_constants/margin_right = 0
 custom_constants/margin_top = 2
 custom_constants/margin_left = 0
 custom_constants/margin_bottom = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="panelContainer" type="PanelContainer" parent="marginContainer"]
 margin_left = 8.0
 margin_top = 2.0
 margin_right = 248.0
-margin_bottom = 71.0
+margin_bottom = 81.0
 rect_min_size = Vector2( 240, 0 )
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-custom_styles/panel = SubResource( 2 )
+custom_styles/panel = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,18 +89,18 @@ __meta__ = {
 margin_left = 1.0
 margin_top = 2.0
 margin_right = 239.0
-margin_bottom = 65.0
+margin_bottom = 75.0
 
 [node name="label" type="Label" parent="marginContainer/panelContainer/vBoxContainer"]
 margin_right = 238.0
 margin_bottom = 37.0
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 1
-text = "Use your mouse to place a PHOTOVOLTAIC GENERATOR on the bright side of the planet, and then build your defenses.
-You can rotate the planet in order to always have generators on the sunny side using the ARROW or WD keys."
+custom_fonts/font = SubResource( 3 )
+text = "Click the icon below and place a PHOTOVOLTAIC GENERATOR on the bright side of the planet. Then build your defenses.
+Use the ARROW or WD keys to rotate the planet in order to always have generators on the sunny side."
 align = 1
 valign = 1
 autowrap = true
@@ -111,41 +108,39 @@ autowrap = true
 [node name="label2" type="Label" parent="marginContainer/panelContainer/vBoxContainer"]
 margin_top = 41.0
 margin_right = 238.0
-margin_bottom = 48.0
-custom_fonts/font = SubResource( 4 )
+margin_bottom = 58.0
 custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 1
-text = "Also, notice that your defense towers use energy to shoot."
+custom_fonts/font = SubResource( 4 )
+text = "
+Also, notice that your defense towers use energy to shoot."
 align = 1
 valign = 1
 autowrap = true
 
 [node name="label3" type="Label" parent="marginContainer/panelContainer/vBoxContainer"]
-margin_top = 52.0
+margin_top = 62.0
 margin_right = 238.0
-margin_bottom = 63.0
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 73.0
 custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Good luck!"
 align = 1
 valign = 1
 autowrap = true
 
 [node name="strCurrentGameVersion" type="Label" parent="."]
-margin_left = 111.995
-margin_top = 31.2068
-margin_right = 363.995
-margin_bottom = 88.2068
-custom_fonts/font = SubResource( 3 )
+margin_left = 113.0
+margin_top = 45.0
+margin_right = 365.0
+margin_bottom = 102.0
 custom_colors/font_color = Color( 0.92, 0.89, 0.72, 0.33 )
-text = "v1.1"
+custom_fonts/font = SubResource( 3 )
+text = "v1.2"
 align = 1
 valign = 1
 autowrap = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="tween" type="Tween" parent="."]

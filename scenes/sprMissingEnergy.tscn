@@ -6,12 +6,16 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Sprite
-var t=0
-func _ready():set_process(true)
-func _process(delta):
-	t+=1
-	if t%10==0:
-		self.visible=!self.visible
+
+var t := 0
+
+func _ready() -> void:
+	set_process(true)
+
+func _process(_delta:float) -> void:
+	t += 1
+	if t%10 == 0:
+		self.visible = !self.visible
 "
 
 [node name="sprMissingEnergy" type="Sprite"]

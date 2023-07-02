@@ -5,12 +5,14 @@
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Control
-func _ready():
+
+func _ready() -> void:
 	self.visible=true
-	global.connect(\"photoPlaced\",self,'goAway')
-func goAway():
-	$tween.interpolate_property(self,'modulate:a',1,0,0.3,Tween.TRANS_QUINT,Tween.EASE_IN)
-	$tween.start()
+	var _v = global.connect(\"photoPlaced\",self,'goAway')
+
+func goAway() -> void:
+	var _v = $tween.interpolate_property(self,'modulate:a',1,0,0.3,Tween.TRANS_QUINT,Tween.EASE_IN)
+	_v = $tween.start()
 	yield($tween,\"tween_all_completed\")
 	self.queue_free()
 "
@@ -60,8 +62,8 @@ margin_right = 155.0
 margin_bottom = 141.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "~\\\"'/+"
 align = 1
 valign = 1
@@ -76,8 +78,8 @@ margin_right = 172.0
 margin_bottom = 157.0
 size_flags_horizontal = 4
 size_flags_vertical = 6
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "PLANET
 
 WAVES"

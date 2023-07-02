@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=1]
+
+[sub_resource type="StyleBoxFlat" id=20]
+content_margin_right = 2.0
+bg_color = Color( 0, 0.188235, 0.286275, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
+corner_radius_bottom_left = 4
+corner_detail = 1
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+anti_aliasing = false
+
+[sub_resource type="GDScript" id=14]
+script/source = "extends HBoxContainer
+var fLastEnergy=0
+
+func _ready() -> void:
+	self.fLastEnergy=global.fEnergy
+	set_process(true)
+
+func _process(_delta:float) -> void:
+	if self.fLastEnergy != global.fEnergy:
+		if self.fLastEnergy < global.fEnergy:
+			self.modulate = global.colors['yellow']
+		elif self.fLastEnergy > global.fEnergy:
+			self.modulate = global.colors['red']
+			
+		self.fLastEnergy=global.fEnergy
+	else:
+		self.modulate=global.colors['white']
+"
+
+[sub_resource type="DynamicFont" id=19]
+extra_spacing_top = 2
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=18]
+script/source = "extends Label
+
+var iValue := 0
+
+func _ready() -> void:
+	set_process(true)
+
+func _process(_delta:float) -> void:
+	iValue = int(lerp(iValue,global.iScore,0.2))
+	self.text = 'Score: ' + str(ceil(self.iValue))
+"
+
+[node name="hudPanelScore" type="PanelContainer"]
+margin_left = 224.0
+margin_top = 2.0
+margin_right = 258.0
+margin_bottom = 20.0
+grow_horizontal = 0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 20 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="hBoxContainer" type="HBoxContainer" parent="."]
+modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 32.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+script = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label2" type="Label" parent="hBoxContainer"]
+margin_right = 31.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 19 )
+text = "Score: 0"
+align = 2
+valign = 1
+script = SubResource( 18 )

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/uiScenes/strTitle.tscn" type="PackedScene" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Control
+
+func _ready() -> void:
+	self.visible = true
+	var _v = global.connect(\"photoPlaced\",self,'goAway')
+	
+func goAway() -> void:
+	var _v = $tween.interpolate_property(self,'modulate:a',1,0,0.3,Tween.TRANS_QUINT,Tween.EASE_IN)
+	_v = $tween.start()
+	yield($tween,\"tween_all_completed\")
+	self.queue_free()
+"
+
+[node name="layerTitle" type="CanvasLayer"]
+layer = 0
+
+[node name="strTitle" parent="." instance=ExtResource( 1 )]
+script = SubResource( 2 )

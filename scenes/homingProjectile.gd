@@ -5,8 +5,9 @@ var nTarget=null
 var t=0
 const fSpeed=220
 const trailFx=preload("res://scenes/trailCircleFx.tscn")
-func _ready():
-	$damageArea.connect("body_entered",self,'damage')
+
+func _ready() -> void:
+	var _v = $damageArea.connect("body_entered",self,'damage')
 	#vVelocity=-fSpeed*(self.global_position-nTarget.global_position).normalized()
 	var wr=weakref(nTarget)
 	if wr.get_ref():
@@ -28,11 +29,11 @@ func _physics_process(_delta):
 	if !wr.get_ref():
 	#if nTarget==null:
 		if self.vVelocity==Vector2():self.queue_free()
-		move_and_slide(vVelocity,Vector2())
+		vVelocity = move_and_slide(vVelocity,Vector2())
 	else:
 		vVelocity=-fSpeed*(self.global_position-nTarget.global_position).normalized()
 		self.rotation=lerp(self.rotation,wrapf(vVelocity.angle(),-PI,PI),0.1)
-		move_and_slide(vVelocity,Vector2())
+		vVelocity = move_and_slide(vVelocity,Vector2())
 #	print_debug(nTarget)
 #	print_debug(nTarget==null)
 #	if vVelocity==Vector2():
@@ -69,5 +70,5 @@ func checkIfOOB():
 		self.global_position.length()<100:
 			$tween.interpolate_property(self,'modulate:a',1,0,0.66,Tween.TRANS_QUINT,Tween.EASE_IN)
 			$tween.start()
-			$tween.connect("tween_all_completed",self,'queue_free')
+			var _v = $tween.connect("tween_all_completed",self,'queue_free')
 			set_physics_process(false)
