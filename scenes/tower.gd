@@ -1,26 +1,29 @@
 extends Area2D
-enum Types {Photo,Homing,Laser,Spread,Shield}
-export(Types) var type=Types.Photo
+
+enum Types {Photo, Homing, Laser, Spread, Shield}
+export(Types) var type = Types.Photo
+
 enum States {Creation,Docked,GoAway}
-var state=States.Creation
-const fEnergyGain=2
-var fShieldHealth=100
-var bMouseIn=false
-var bDeletionQueued:=false
-const homingProjectile=preload("res://scenes/homingProjectile.tscn")
-const laserBeam=preload("res://scenes/laserBeam.tscn")
-const spreadBullet=preload("res://scenes/spreadBullet.tscn")
-const sfxHoming=preload("res://scenes/sfxHoming.tscn")
-const sfxLaser=preload("res://scenes/sfxLaser.tscn")
-const sfxSpread=preload("res://scenes/sfxSpread.tscn")
-const sfxTowerSet=preload("res://scenes/sfxTowerSet.tscn")
-const sprMissingEnergy=preload("res://scenes/sprMissingEnergy.tscn")
-var bCooldown=true
-var dictEnergyCosts={
+var state = States.Creation
+
+const fEnergyGain := 4.0#2
+var fShieldHealth := 100
+var bMouseIn := false
+var bDeletionQueued := false
+const homingProjectile := preload("res://scenes/homingProjectile.tscn")
+const laserBeam := preload("res://scenes/laserBeam.tscn")
+const spreadBullet := preload("res://scenes/spreadBullet.tscn")
+const sfxHoming := preload("res://scenes/sfxHoming.tscn")
+const sfxLaser := preload("res://scenes/sfxLaser.tscn")
+const sfxSpread := preload("res://scenes/sfxSpread.tscn")
+const sfxTowerSet := preload("res://scenes/sfxTowerSet.tscn")
+const sprMissingEnergy := preload("res://scenes/sprMissingEnergy.tscn")
+var bCooldown := true
+var dictEnergyCosts = {
 	Types.Photo:0,
 	Types.Homing:6,
 	Types.Laser:2,
-	Types.Spread:10,
+	Types.Spread:1,
 	Types.Shield:0
 }
 var dictCollisionPolygons={
@@ -109,15 +112,29 @@ func stateRoutineCreation(delta):
 			if self.type==Types.Shield:$shieldArea/collisionShape2D.disabled=false
 			if self.type==Types.Photo:global.emit_signal("photoPlaced")
 #			$animationPlayer.play("dock")
+
 func addSfxTowerSet():
 	global.nDebug2droot.add_child(sfxTowerSet.instance())
-func stateRoutineDocked(delta):
-	if self.type==Types.Photo:stateRoutinePhoto(delta)
-	elif self.type==Types.Homing:stateRoutineHoming(delta)
-	elif self.type==Types.Laser:stateRoutineLaser(delta)
-	elif self.type==Types.Spread:stateRoutineSpread(delta)
-	elif self.type==Types.Shield:stateRoutineShield(delta)
 	
+func stateRoutineDocked(delta:float) -> void:
+	match self.type:
+		Types.Photo:
+			stateRoutinePhoto(delta)
+		Types.Homing:
+			stateRoutineHoming(delta)
+		Types.Laser:
+			stateRoutineLaser(delta)
+		Types.Spread:
+			stateRoutineSpread(delta)
+		Types.Shield:
+			stateRoutineShield(delta)
+	
+#	if self.type==Types.Photo:stateRoutinePhoto(delta)
+#	elif self.type==Types.Homing:stateRoutineHoming(delta)
+#	elif self.type==Types.Laser:stateRoutineLaser(delta)
+#	elif self.type==Types.Spread:stateRoutineSpread(delta)
+#	elif self.type==Types.Shield:stateRoutineShield(delta)
+#
 	if Input.is_action_just_pressed('ui_rmb') and self.bDeletionQueued:
 		self.bDeletionQueued=false
 		$layerControl/panelClickToDeleteConfirmation.visible=false
@@ -159,7 +176,7 @@ func spawn():
 		$lightOccTower.queue_free()
 		$lightOccShield.queue_free()
 	elif self.type==Types.Laser:
-		$timerCooldown.wait_time=4
+		$timerCooldown.wait_time = 1.0
 		$sprite/sprPhoto.queue_free()
 #		$sprite/sprLaser.queue_free()
 		$sprite/sprHoming.queue_free()
@@ -168,7 +185,7 @@ func spawn():
 		$lightOccPhoto.queue_free()
 		$lightOccShield.queue_free()
 	elif self.type==Types.Homing:
-		$timerCooldown.wait_time=3
+		$timerCooldown.wait_time = 4
 		$sprite/sprPhoto.queue_free()
 		$sprite/sprLaser.queue_free()
 #		$sprite/sprHoming.queue_free()
@@ -177,7 +194,7 @@ func spawn():
 		$lightOccPhoto.queue_free()
 		$lightOccShield.queue_free()
 	elif self.type==Types.Spread:
-		$timerCooldown.wait_time=8
+		$timerCooldown.wait_time = 2
 		$sprite/sprPhoto.queue_free()
 		$sprite/sprLaser.queue_free()
 		$sprite/sprHoming.queue_free()
@@ -254,14 +271,16 @@ func showOptions():
 	return
 	#$controlOptions.show()
 
-func stateRoutinePhoto(delta):
-	if $photocell.get_overlapping_areas().size()>0:
-		global.fEnergy+=self.fEnergyGain*delta
-		$sprite/sprPhoto/photoParticles.emitting=true
-		$sprite.modulate=Color('#ffffff')
+func stateRoutinePhoto(delta:float) -> void:
+	if $photocell.get_overlapping_areas().size() > 0:
+		global.fEnergy += self.fEnergyGain * delta
+		$sprite/sprPhoto/photoParticles.emitting = true
+		#$sprite.modulate = Color('#ffffff')
+		$sprite.modulate = lerp($sprite.modulate, Color('#ffffff'), 0.1)
 	else:
-		$sprite/sprPhoto/photoParticles.emitting=false
-		$sprite.modulate=Color('#555555')
+		$sprite/sprPhoto/photoParticles.emitting = false
+		#$sprite.modulate=Color('#555555')
+		$sprite.modulate = lerp($sprite.modulate, Color('#555555'), 0.1)
 
 func stateRoutineShield(_delta:float) -> void:
 	$progressBar.value=lerp($progressBar.value,self.fShieldHealth,0.1)
@@ -295,15 +314,15 @@ func stateRoutineLaser(_delta:float) -> void:
 			global.nDebug2droot.add_child(i)
 
 func stateRoutineSpread(_delta:float) -> void:
-	$progressBar.value=$timerCooldown.wait_time-$timerCooldown.time_left
+	$progressBar.value = $timerCooldown.wait_time - $timerCooldown.time_left
 	if not self.bCooldown:
-		if global.fEnergy>=self.dictEnergyCosts[self.Types.Spread]:
+		if global.fEnergy >= self.dictEnergyCosts[self.Types.Spread]:
 			spreadShoot()
 		else:
-			self.bCooldown=true
+			self.bCooldown = true
 			$timerCooldown.start()
-			var i=sprMissingEnergy.instance()
-			i.global_position=self.global_position
+			var i = sprMissingEnergy.instance()
+			i.global_position = self.global_position
 			global.nDebug2droot.add_child(i)
 
 func homingShoot(target):

@@ -14,7 +14,7 @@ var aColors = [
 var fDelay := 0.0
 
 func _ready() -> void:
-	yield(get_tree().create_timer(fDelay),'timeout')
+	#yield(get_tree().create_timer(fDelay),'timeout')
 	randomize()
 # warning-ignore:narrowing_conversion
 	fRadius = rand_range(64.0,128.0)

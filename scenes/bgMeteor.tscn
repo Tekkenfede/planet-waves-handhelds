@@ -52,5 +52,6 @@ occluder = SubResource( 4 )
 [node name="visibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 
 [node name="tween" type="Tween" parent="."]
+
 [connection signal="screen_entered" from="visibilityNotifier2D" to="." method="_on_visibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="visibilityNotifier2D" to="." method="_on_visibilityNotifier2D_screen_exited"]

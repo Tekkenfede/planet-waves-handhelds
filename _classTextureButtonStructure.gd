@@ -51,12 +51,12 @@ func refreshIcon() -> void:
 			nTexIcon.modulate = Color('#84B082')
 
 func disableBlink() -> void:
-	self.set_process(false)
+	#self.set_process(false)
 	self.bPhotoBlink = false
 	self.rect_scale = Vector2(1,1)
 
 func _process(_delta:float) -> void:
-	self.modulate = Color('#555555') if global.fEnergy < self.dictPrices[self.type] else Color('#ffffff')
+	self.modulate = lerp(self.modulate, Color('#555555') if global.fEnergy < self.dictPrices[self.type] else Color('#ffffff'), 0.1)
 	
 	if self.type == self.Types.Photo and self.bPhotoBlink:
 		t += 1

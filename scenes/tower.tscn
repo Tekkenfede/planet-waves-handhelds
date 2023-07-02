@@ -84,7 +84,7 @@ loop = true
 polygon = PoolVector2Array( 21, -8, -20, -8, -20, 24, 21, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=6]
-polygon = PoolVector2Array( 21, -31, -20, -31, -20, 24, 21, 24 )
+polygon = PoolVector2Array( 21, 0, -20, 0, -20, 24, 21, 24 )
 
 [sub_resource type="OccluderPolygon2D" id=7]
 polygon = PoolVector2Array( -102, -99, -20, -118, 102, -87, -22, -69 )

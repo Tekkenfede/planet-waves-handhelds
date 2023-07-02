@@ -60,10 +60,10 @@ func _ready() -> void:
 	f.close()
 	
 	SilentWolf.configure({
-	"api_key": self.apiKey,
-	"game_id": "PlanetWaves",
-	"game_version": "1.0.0",
-	"log_level": 1
+		"api_key": self.apiKey,
+		"game_id": "PlanetWaves",
+		"game_version": "1.0.0",
+		"log_level": 1
 	})
 	
 	if OS.is_debug_build():
@@ -73,49 +73,54 @@ func _ready() -> void:
 	
 func _process(_delta:float) -> void:
 	if OS.is_debug_build() and Input.is_action_just_pressed('ui_debug'):
-		self.iPlanetLife-=20
-		#self.fEnergy-=1000
-		self.iScore=10000
+		self.iPlanetLife -= 20
+		self.iScore = 10000
+	
 	if Input.is_action_just_pressed("ui_mute") and not self.bGameOver:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index('Master'),!AudioServer.is_bus_mute(AudioServer.get_bus_index('Master')))
-		pass
-	if not bGameOver and self.iPlanetLife<=0:
+	
+	if not bGameOver and self.iPlanetLife <= 0:
 		bGameOver=true
 		emit_signal('gameOver')
-	if iNumberOfKills!=iCurrentNumberOfKills:
-		iCurrentNumberOfKills=iNumberOfKills
-		if iNumberOfKills==5:emit_signal("oneKill")
-		elif iNumberOfKills==10:emit_signal("threeKills")
-		elif iNumberOfKills==25:emit_signal("fiveKills")
-		elif iNumberOfKills==25:
+	
+	if iNumberOfKills != iCurrentNumberOfKills:
+		iCurrentNumberOfKills = iNumberOfKills
+		if iNumberOfKills == 5:
+			emit_signal("oneKill")
+		elif iNumberOfKills == 10:
+			emit_signal("threeKills")
+		elif iNumberOfKills == 25:
+			emit_signal("fiveKills")
+		elif iNumberOfKills == 25:
 			self.bTutorialDone=true
 			emit_signal("sevenKills")
+	
 	if Input.is_action_just_pressed('ui_number') and not bGameOver and not self.bTowerQueued:
-		var iType=-1
-		var iPrice=0
+		var iType := -1
+		var iPrice := 0
 		if Input.is_action_just_pressed("ui_1"):
-			iType=0
-			iPrice=20
+			iType = 0
+			iPrice = 20
 		elif Input.is_action_just_pressed("ui_2"):
-			iType=1
-			iPrice=50
+			iType = 1
+			iPrice = 50
 		elif Input.is_action_just_pressed("ui_3"):
-			if bTutorialDone or (iNumberOfKills>=5):
-				iType=4
-				iPrice=50
+			if bTutorialDone or (iNumberOfKills >= 5):
+				iType = 4
+				iPrice = 50
 		elif Input.is_action_just_pressed("ui_4"):
-			if bTutorialDone or (iNumberOfKills>=10):
-				iType=2
-				iPrice=75
+			if bTutorialDone or (iNumberOfKills >= 10):
+				iType = 2
+				iPrice = 75
 		elif Input.is_action_just_pressed("ui_5"):
-			if bTutorialDone or (iNumberOfKills>=25):
-				iType=3
-				iPrice=100
-		if iType!=-1:
-			if self.fEnergy>=iPrice:
-				self.fEnergy-=iPrice
-				self.bTowerQueued=true
-				var i=tower.instance()
-				i.type=iType
+			if bTutorialDone or (iNumberOfKills >= 25):
+				iType = 3
+				iPrice = 100
+		if iType != -1:
+			if self.fEnergy >= iPrice:
+				self.fEnergy -= iPrice
+				self.bTowerQueued = true
+				var i = tower.instance()
+				i.type = iType
 				global.nStructures.add_child(i)
 				self.nDebug2droot.add_child(sfxNewStructure.instance())

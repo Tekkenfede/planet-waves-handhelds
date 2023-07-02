@@ -60,13 +60,13 @@ func _process(_delta:float) -> void:
 	if Input.is_action_just_pressed(\"ui_hideStructures\"):
 		if self.bHidden:
 			self.bHidden = false
-			$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,0,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
-			$tween.start()
+			#$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,0,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
+			#$tween.start()
 			global.nDebug2droot.add_child(sfxNewStructure.instance())
 		else:
 			self.bHidden = true
-			$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,28,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
-			$tween.start()
+			#$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,28,0.33,Tween.TRANS_QUINT,Tween.EASE_IN)
+			#$tween.start()
 			global.nDebug2droot.add_child(sfxNewStructure.instance())
 "
 
@@ -134,8 +134,8 @@ func _process(_delta:float) -> void:
 
 [node name="debugRoot" type="Node"]
 __meta__ = {
-"_edit_horizontal_guides_": [ 55.0326 ],
-"_edit_vertical_guides_": [ 84.0 ]
+"_edit_horizontal_guides_": [ 55.0326, 136.0 ],
+"_edit_vertical_guides_": [ 84.0, 128.0 ]
 }
 
 [node name="pauseLayer" parent="." instance=ExtResource( 25 )]
@@ -198,8 +198,11 @@ margin_bottom = 268.0
 mouse_filter = 2
 
 [node name="ctnStructuresUi" type="MarginContainer" parent="debugUi/debugControl/marginCtnHud/control"]
-margin_right = 250.0
-margin_bottom = 266.0
+margin_left = 35.0
+margin_top = 67.0
+margin_right = 285.0
+margin_bottom = 333.0
+rect_scale = Vector2( 0.75, 0.75 )
 mouse_filter = 2
 size_flags_horizontal = 4
 script = SubResource( 3 )
