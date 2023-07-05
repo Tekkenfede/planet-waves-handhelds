@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scenes/etc/spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=2]
@@ -25,6 +25,9 @@
 [ext_resource path="res://scenes/controlGameOver.tscn" type="PackedScene" id=23]
 [ext_resource path="res://scenes/etc/splashFadeAway.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/etc/pauseLayer.tscn" type="PackedScene" id=25]
+[ext_resource path="res://resources/textures/vignette.png" type="Texture" id=26]
+[ext_resource path="res://resources/textures/nebulaAlt1.png" type="Texture" id=27]
+[ext_resource path="res://scenes/sprNebula.gd" type="Script" id=28]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
@@ -146,6 +149,29 @@ layer = 127
 [node name="layerWhite" parent="." instance=ExtResource( 18 )]
 
 [node name="layerTitle" parent="." instance=ExtResource( 14 )]
+
+[node name="layerBg" type="CanvasLayer" parent="."]
+layer = -5
+
+[node name="bg" type="Sprite" parent="layerBg"]
+visible = false
+modulate = Color( 0, 0.188235, 0.286275, 1 )
+scale = Vector2( 10000, 10000 )
+z_as_relative = false
+texture = ExtResource( 7 )
+
+[node name="sprNebula" type="Sprite" parent="layerBg"]
+visible = false
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 27 )
+centered = false
+
+[node name="layerVignette" type="CanvasLayer" parent="."]
+
+[node name="sprite" type="Sprite" parent="layerVignette"]
+modulate = Color( 1, 1, 1, 0.33 )
+texture = ExtResource( 26 )
+centered = false
 
 [node name="debugUi" type="CanvasLayer" parent="."]
 
@@ -390,9 +416,15 @@ margin_bottom = 16.0
 [node name="bg" type="Sprite" parent="."]
 modulate = Color( 0, 0.188235, 0.286275, 1 )
 scale = Vector2( 10000, 10000 )
-z_index = -512
+z_index = -999
 z_as_relative = false
 texture = ExtResource( 7 )
+
+[node name="sprNebula" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.33 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [node name="bgParticles" parent="." instance=ExtResource( 12 )]
 
