@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 var t := 0
 var vDirection := Vector2(1,0)
-const fSpeed = 66.0
+const fSpeed := 200.0#66.0
 
 func _ready():
 	var _v = $area2D.connect("body_entered",self,'bodyEnter')

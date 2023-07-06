@@ -40,9 +40,9 @@ hframes = 3
 frame = 2
 
 [node name="area2D" type="Area2D" parent="."]
-input_pickable = false
 collision_layer = 4
 collision_mask = 4
+input_pickable = false
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="area2D"]
 shape = SubResource( 1 )

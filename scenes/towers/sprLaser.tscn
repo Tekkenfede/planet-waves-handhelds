@@ -16,7 +16,7 @@ normal_map = ExtResource( 3 )
 offset = Vector2( 0, -25 )
 
 [node name="cannonLaser" type="Position2D" parent="sprTower"]
-position = Vector2( 0, -30 )
+position = Vector2( 0, -16 )
 __meta__ = {
 "_gizmo_extents_": 20.0
 }

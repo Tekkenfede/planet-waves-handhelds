@@ -102,7 +102,7 @@ func _process(_delta:float) -> void:
 			iType = 0
 			iPrice = 20
 		elif Input.is_action_just_pressed("ui_2"):
-			iType = 1
+			iType = 3
 			iPrice = 50
 		elif Input.is_action_just_pressed("ui_3"):
 			if bTutorialDone or (iNumberOfKills >= 5):
@@ -114,7 +114,7 @@ func _process(_delta:float) -> void:
 				iPrice = 75
 		elif Input.is_action_just_pressed("ui_5"):
 			if bTutorialDone or (iNumberOfKills >= 25):
-				iType = 3
+				iType = 1
 				iPrice = 100
 		if iType != -1:
 			if self.fEnergy >= iPrice:

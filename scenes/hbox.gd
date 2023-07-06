@@ -6,9 +6,10 @@ func _ready() -> void:
 	_v = global.connect("fiveKills",self,'fiveKills')
 	
 	if not global.bTutorialDone:
-		$vboxShield.visible = false
-		$vboxLaser.visible = false
-		$vboxSpread.visible = false
+		pass
+#		$vboxShield.visible = false
+#		$vboxLaser.visible = false
+#		$vboxHoming.visible = false
 	
 	set_process(true)
 	
@@ -22,4 +23,4 @@ func threeKills() -> void:
 	$vboxLaser.visible = true
 
 func fiveKills() -> void:
-	$vboxSpread.visible = true
+	$vboxHoming.visible = true

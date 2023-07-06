@@ -3,7 +3,7 @@ extends Area2D
 enum Types {Photo, Homing, Laser, Spread, Shield}
 export(Types) var type = Types.Photo
 
-enum States {Creation,Docked,GoAway}
+enum States {Creation, Docked, GoAway}
 var state = States.Creation
 
 const fEnergyGain := 4.0#2
@@ -55,9 +55,9 @@ func _ready():
 	spawn()
 	selectColor()
 	setupLine2d()
-	$progressBar.max_value=$timerCooldown.wait_time if self.type!=Types.Shield else 100
-	$sprite.visible=true
-	$sprite/sprReference.visible=false
+	$progressBar.max_value = $timerCooldown.wait_time if self.type != Types.Shield else 100
+	$sprite.visible = true
+	$sprite/sprReference.visible = false
 	$timerCooldown.start()
 # warning-ignore:return_value_discarded
 	self.connect("mouse_entered",self,'mouseEnter')
@@ -176,7 +176,7 @@ func spawn():
 		$lightOccTower.queue_free()
 		$lightOccShield.queue_free()
 	elif self.type==Types.Laser:
-		$timerCooldown.wait_time = 1.0
+		$timerCooldown.wait_time = 4.0
 		$sprite/sprPhoto.queue_free()
 #		$sprite/sprLaser.queue_free()
 		$sprite/sprHoming.queue_free()
@@ -260,7 +260,10 @@ func mouseExit():
 	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
 	self.bMouseIn=false
 	$line2D.modulate.a=0
-func _on_timer_timeout():self.bCooldown=false
+	
+func _on_timer_timeout():
+	self.bCooldown = false
+
 func bodyEnter(b):
 	if self.state!=self.States.Creation:
 		if b.is_in_group('Enemy'):
@@ -273,7 +276,8 @@ func showOptions():
 
 func stateRoutinePhoto(delta:float) -> void:
 	if $photocell.get_overlapping_areas().size() > 0:
-		global.fEnergy += self.fEnergyGain * delta
+		#global.fEnergy += self.fEnergyGain * delta
+		global.fEnergy = lerp(global.fEnergy, 1000.0, self.fEnergyGain * delta * delta)
 		$sprite/sprPhoto/photoParticles.emitting = true
 		#$sprite.modulate = Color('#ffffff')
 		$sprite.modulate = lerp($sprite.modulate, Color('#ffffff'), 0.1)
@@ -301,15 +305,14 @@ func stateRoutineHoming(_delta:float) -> void:
 			global.nDebug2droot.add_child(i)
 
 func stateRoutineLaser(_delta:float) -> void:
-	$progressBar.value=$timerCooldown.wait_time-$timerCooldown.time_left
+	$progressBar.value = $timerCooldown.wait_time - $timerCooldown.time_left
 	if not self.bCooldown:
-		if global.fEnergy>=self.dictEnergyCosts[self.Types.Laser]:
-			var closestEnemy=findClosestEnemy()
-			if closestEnemy!=null:laserShoot(closestEnemy)
+		if global.fEnergy >= self.dictEnergyCosts[self.Types.Laser]:
+			laserShoot()
 		else:
-			self.bCooldown=true
+			self.bCooldown = true
 			$timerCooldown.start()
-			var i=sprMissingEnergy.instance()
+			var i = sprMissingEnergy.instance()
 			i.global_position=self.global_position
 			global.nDebug2droot.add_child(i)
 
@@ -351,31 +354,21 @@ func homingShoot(target):
 	global.nCamera.minorShake()
 	$tween.interpolate_property($sprite/sprHoming/sprTower,'position:y',20,16,0.6,Tween.TRANS_QUINT,Tween.EASE_IN)
 	$tween.start()
-func laserShoot(target):
-	var closestEnemy=target
-	global.fEnergy-=self.dictEnergyCosts[self.Types.Laser]
-	self.bCooldown=true
-	var aa=(-$cannon.global_position+closestEnemy.global_position).angle()
-	$tween.interpolate_property($sprite/sprLaser/sprTower,
-								'rotation',
-								$sprite/sprLaser/sprTower.rotation,
-								wrapf(aa-self.rotation-global.nPlanetBase.rotation+PI/2,-PI,PI),
-								0.3,
-								Tween.TRANS_BACK,
-								Tween.EASE_OUT)
-	$tween.start()
-	yield($tween,"tween_all_completed")
+	
+func laserShoot() -> void:
+	global.fEnergy -= self.dictEnergyCosts[self.Types.Laser]
+	self.bCooldown = true
 	$timerCooldown.start()
-	var i=laserBeam.instance()
-	i.global_position=$sprite/sprLaser/sprTower/cannonLaser.global_position
-	i.rotation=aa
-	global.nDebug2droot.add_child(i)
+	var i = laserBeam.instance()
+	add_child(i)
+	i.global_position = $sprite/sprLaser/sprTower/cannonLaser.global_position
+	i.rotation = -PI/2
 	$tween.interpolate_property($sprite/sprLaser/sprTower,'position:y',20,16,0.6,Tween.TRANS_QUINT,Tween.EASE_IN)
 	$tween.start()
 	
 func spreadShoot():
-	self.bCooldown=true
-	global.fEnergy-=self.dictEnergyCosts[self.Types.Spread]
+	self.bCooldown = true
+	global.fEnergy -= self.dictEnergyCosts[self.Types.Spread]
 	$timerCooldown.start()
 	global.nDebug2droot.add_child(sfxSpread.instance())
 	for a in [-2*PI/6,-PI/6,0,PI/6,2*PI/6]:
@@ -386,6 +379,6 @@ func spreadShoot():
 		global.nDebug2droot.add_child(i)
 	global.nPlanetBase.global_position-=0.04*self.global_position
 	global.nCamera.minorShake()
-	$sprite/sprSpread/sprTower/cannonSpread/spreadParticles.emitting=true
+	$sprite/sprSpread/sprTower/cannonSpread/spreadParticles.emitting = true
 	$tween.interpolate_property($sprite/sprSpread/sprTower,'position:y',20,16,0.6,Tween.TRANS_QUINT,Tween.EASE_IN)
 	$tween.start()

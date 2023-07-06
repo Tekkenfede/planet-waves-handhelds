@@ -285,7 +285,7 @@ margin_left = 3.0
 margin_top = 1.0
 margin_right = 10.0
 margin_bottom = 1.0
-custom_colors/font_color = Color( 0.968627, 0.498039, 0, 1 )
+custom_colors/font_color = Color( 0.517647, 0.690196, 0.509804, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "2"
 align = 1
@@ -339,7 +339,7 @@ margin_left = 3.0
 margin_top = 1.0
 margin_right = 11.0
 margin_bottom = 1.0
-custom_colors/font_color = Color( 0.517647, 0.690196, 0.509804, 1 )
+custom_colors/font_color = Color( 0.968627, 0.498039, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "5"
 align = 1
@@ -370,10 +370,10 @@ script = ExtResource( 21 )
 margin_left = 0.0
 margin_right = 16.0
 
-[node name="vboxHoming" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
+[node name="vboxSpread" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 20.0
 margin_right = 36.0
-type = 1
+type = 3
 
 [node name="vboxShield" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 type = 4
@@ -383,10 +383,10 @@ margin_left = 60.0
 margin_right = 76.0
 type = 2
 
-[node name="vboxSpread" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
+[node name="vboxHoming" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 80.0
 margin_right = 96.0
-type = 3
+type = 1
 
 [node name="tween" type="Tween" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
 
