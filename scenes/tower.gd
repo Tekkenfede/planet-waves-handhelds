@@ -21,9 +21,9 @@ const sprMissingEnergy := preload("res://scenes/sprMissingEnergy.tscn")
 var bCooldown := true
 var dictEnergyCosts = {
 	Types.Photo:0,
-	Types.Homing:6,
-	Types.Laser:2,
-	Types.Spread:1,
+	Types.Homing:50,
+	Types.Laser:5,
+	Types.Spread:10,
 	Types.Shield:0
 }
 var dictCollisionPolygons={
@@ -276,8 +276,8 @@ func showOptions():
 
 func stateRoutinePhoto(delta:float) -> void:
 	if $photocell.get_overlapping_areas().size() > 0:
-		#global.fEnergy += self.fEnergyGain * delta
-		global.fEnergy = lerp(global.fEnergy, 1000.0, self.fEnergyGain * delta * delta)
+		global.fEnergy += self.fEnergyGain * delta
+		#global.fEnergy = lerp(global.fEnergy, 1000.0, self.fEnergyGain * delta * delta)
 		$sprite/sprPhoto/photoParticles.emitting = true
 		#$sprite.modulate = Color('#ffffff')
 		$sprite.modulate = lerp($sprite.modulate, Color('#ffffff'), 0.1)

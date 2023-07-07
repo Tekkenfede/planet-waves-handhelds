@@ -152,6 +152,7 @@ layer = 127
 
 [node name="layerBg" type="CanvasLayer" parent="."]
 layer = -5
+visible = false
 
 [node name="bg" type="Sprite" parent="layerBg"]
 visible = false

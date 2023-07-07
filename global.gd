@@ -7,7 +7,10 @@ var nPlanetBase
 var nDebug2droot
 const RESOLUTION=Vector2(256,256)
 var fPlanetRadius=1
-var fEnergy=20#1000000
+var fEnergy := 20.0 setget setEnergy#1000000
+func setEnergy(fValue) -> void:
+	fEnergy = clamp(fValue, 0.0, 1000.0)
+
 var colors={
 	'blue':Color('#003049'),
 	'red':Color('#D62828'),
@@ -67,7 +70,8 @@ func _ready() -> void:
 	})
 	
 	if OS.is_debug_build():
-		self.fEnergy+=1000
+		#self.fEnergy+=1000
+		pass
 	add_child(sfxMusic.instance())
 	set_process(true)
 	

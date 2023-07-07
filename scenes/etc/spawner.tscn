@@ -12,8 +12,8 @@ func _ready() -> void:
 	_v = global.connect(\"clearActors\",self,'stop')
 # warning-ignore:narrowing_conversion
 	self.fRadius = 1.66*global.RESOLUTION.length()
-	if OS.is_debug_build():
-		$timer.wait_time=1.5
+	#if OS.is_debug_build():
+	#	$timer.wait_time = 1.5
 
 func spawn() -> void:
 	var aa = rand_range(-PI,PI)

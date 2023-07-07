@@ -47,7 +47,8 @@ func _ready() -> void:
 	set_process(true)
 	
 func _process(_delta:float) -> void:
-	self.text = str(floor(global.fEnergy))
+	#self.text = int(floor(global.fEnergy))
+	self.text = \"%03d\" % int(floor(global.fEnergy))
 "
 
 [node name="hudPanelEnergy" type="PanelContainer"]
@@ -62,7 +63,7 @@ custom_styles/panel = SubResource( 13 )
 modulate = Color( 0.917647, 0.886275, 0.717647, 1 )
 margin_left = 1.0
 margin_top = 1.0
-margin_right = 25.0
+margin_right = 33.0
 margin_bottom = 17.0
 script = SubResource( 14 )
 __meta__ = {
@@ -76,10 +77,10 @@ texture = ExtResource( 2 )
 
 [node name="label" type="Label" parent="hBoxContainer"]
 margin_left = 20.0
-margin_right = 24.0
+margin_right = 32.0
 margin_bottom = 13.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_fonts/font = SubResource( 17 )
-text = "0"
+text = "000"
 script = SubResource( 16 )

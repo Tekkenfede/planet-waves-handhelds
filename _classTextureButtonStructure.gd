@@ -5,9 +5,9 @@ enum Types {Photo, Homing, Laser, Spread, Shield}
 export(Types) var type = Types.Photo
 const dictPrices := {
 	Types.Photo: 20,
-	Types.Homing: 50,
+	Types.Homing: 200,
 	Types.Laser: 75,
-	Types.Spread: 100,
+	Types.Spread: 50,
 	Types.Shield: 50,
 }
 

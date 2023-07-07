@@ -6,10 +6,10 @@ func _ready() -> void:
 	_v = global.connect("fiveKills",self,'fiveKills')
 	
 	if not global.bTutorialDone:
-		pass
-#		$vboxShield.visible = false
-#		$vboxLaser.visible = false
-#		$vboxHoming.visible = false
+		#pass
+		$vboxShield.visible = false
+		$vboxLaser.visible = false
+		$vboxHoming.visible = false
 	
 	set_process(true)
 	
