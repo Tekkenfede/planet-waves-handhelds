@@ -24,4 +24,4 @@ func threeKills() -> void:
 	showMessage('Unlocked LASER')
 
 func fiveKills() -> void:
-	showMessage('Unlocked SPREAD')
+	showMessage('Unlocked HOMING')
