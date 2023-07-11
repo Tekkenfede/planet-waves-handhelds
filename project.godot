@@ -28,7 +28,7 @@ _global_script_class_icons={
 
 config/name="Planet Waves"
 run/main_scene="res://scenes/debugRootMain.tscn"
-boot_splash/image="res://resources/splashScreen.png"
+boot_splash/image="res://resources/meta/splashScreen.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
