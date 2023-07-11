@@ -4,13 +4,20 @@
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
-func _ready():
+
+func _ready() -> void:
+	self.visible = true
+	
 	if global.bTutorialDone:
 		self.queue_free()
+	
 	yield(global,\"photoPlaced\")
-	$tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,self.rect_global_position.y-256,0.66,Tween.TRANS_QUINT,Tween.EASE_IN,1.0)
-	$tween.start()
+	
+	var _v = $tween.interpolate_property(self,'rect_global_position:y',self.rect_global_position.y,self.rect_global_position.y-256,0.66,Tween.TRANS_QUINT,Tween.EASE_IN,1.0)
+	_v = $tween.start()
+	
 	yield($tween,\"tween_all_completed\")
+	
 	self.queue_free()
 "
 

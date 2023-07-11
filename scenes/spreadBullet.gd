@@ -24,6 +24,7 @@ func checkIfOOB() -> void:
 			var _v = $tween.interpolate_property(self,'modulate:a',1,0,0.66,Tween.TRANS_QUINT,Tween.EASE_IN)
 			_v = $tween.start()
 			_v = $tween.connect("tween_all_completed",self,'queue_free')
+
 func bodyEnter(b):
 	if b.is_in_group('Enemy'):
 		b.die()

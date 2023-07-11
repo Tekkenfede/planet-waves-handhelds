@@ -6,6 +6,8 @@ export(Types) var type = Types.Photo
 enum States {Creation, Docked, GoAway}
 var state = States.Creation
 
+var t := 0
+
 const fEnergyGain := 4.0#2
 var fShieldHealth := 100
 var bMouseIn := false
@@ -241,9 +243,13 @@ func selectColor():
 	#elif self.type==Types.Spread:$sprite.modulate=global.colors['green']
 func goAway():
 #	nPanelClickToDelete.visible=false
+	if self.type == self.Types.Photo:
+		global.fEnergy += 20
+	
 	var _v = $tween.interpolate_property(self,'scale',self.scale,Vector2(),0.44,Tween.TRANS_BACK,Tween.EASE_IN)
 	_v = $tween.start()
 	_v = $tween.connect("tween_all_completed",self,'queue_free')
+
 func shakeScreen():
 #	print_debug('ads')
 	global.nCamera.medShake()
@@ -275,8 +281,11 @@ func showOptions():
 	#$controlOptions.show()
 
 func stateRoutinePhoto(delta:float) -> void:
+	t += 1
 	if $photocell.get_overlapping_areas().size() > 0:
 		global.fEnergy += self.fEnergyGain * delta
+		if t % 120 == 0:
+			global.iScore += 1
 		#global.fEnergy = lerp(global.fEnergy, 1000.0, self.fEnergyGain * delta * delta)
 		$sprite/sprPhoto/photoParticles.emitting = true
 		#$sprite.modulate = Color('#ffffff')

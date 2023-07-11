@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/etc/splashFadeAway.gd" type="Script" id=1]
-[ext_resource path="res://resources/splashScreen.png" type="Texture" id=2]
+[ext_resource path="res://resources/meta/splashScreen.png" type="Texture" id=2]
 
 [node name="splashFadeAway" type="CanvasLayer"]
 layer = 128

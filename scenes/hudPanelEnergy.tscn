@@ -3,7 +3,7 @@
 [ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://resources/textures/energyIcon.png" type="Texture" id=2]
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxFlat" id=18]
 content_margin_right = 2.0
 bg_color = Color( 0, 0.188235, 0.286275, 1 )
 border_width_left = 1
@@ -13,8 +13,6 @@ border_width_bottom = 1
 border_color = Color( 0.917647, 0.886275, 0.717647, 1 )
 corner_radius_bottom_right = 4
 corner_detail = 1
-expand_margin_left = 10.0
-expand_margin_top = 10.0
 anti_aliasing = false
 
 [sub_resource type="GDScript" id=14]
@@ -57,7 +55,7 @@ margin_bottom = 18.0
 mouse_filter = 1
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/panel = SubResource( 13 )
+custom_styles/panel = SubResource( 18 )
 
 [node name="hBoxContainer" type="HBoxContainer" parent="."]
 modulate = Color( 0.917647, 0.886275, 0.717647, 1 )

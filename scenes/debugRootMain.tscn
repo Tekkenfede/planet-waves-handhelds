@@ -46,7 +46,7 @@ corner_detail = 1
 expand_margin_bottom = 32.0
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=43]
 font_data = ExtResource( 10 )
 
 [sub_resource type="GDScript" id=3]
@@ -170,7 +170,8 @@ centered = false
 [node name="layerVignette" type="CanvasLayer" parent="."]
 
 [node name="sprite" type="Sprite" parent="layerVignette"]
-modulate = Color( 1, 1, 1, 0.33 )
+modulate = Color( 1, 1, 1, 0.4 )
+light_mask = 0
 texture = ExtResource( 26 )
 centered = false
 
@@ -183,44 +184,44 @@ mouse_filter = 2
 script = ExtResource( 22 )
 
 [node name="panelUnlocks" type="PanelContainer" parent="debugUi/debugControl"]
-margin_left = 61.0
-margin_top = 284.0
-margin_right = 192.0
-margin_bottom = 340.0
+margin_left = 169.0
+margin_top = 294.0
+margin_right = 253.0
+margin_bottom = 367.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 19 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="label" type="Label" parent="debugUi/debugControl/panelUnlocks"]
 margin_left = 16.0
 margin_top = 6.0
-margin_right = 115.0
-margin_bottom = 20.0
+margin_right = 68.0
+margin_bottom = 37.0
 custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 43 )
 text = "Unlocked spread"
 align = 1
+autowrap = true
 
 [node name="tween" type="Tween" parent="debugUi/debugControl/panelUnlocks"]
 
 [node name="marginCtnHud" type="MarginContainer" parent="debugUi/debugControl"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 25.0
+margin_top = 55.0
+margin_right = 25.0
+margin_bottom = 55.0
+rect_scale = Vector2( 0.8, 0.8 )
 mouse_filter = 2
-custom_constants/margin_right = 4
 custom_constants/margin_top = 2
-custom_constants/margin_left = 2
 custom_constants/margin_bottom = 4
 
 [node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud"]
-margin_left = 2.0
 margin_top = 2.0
-margin_right = 252.0
+margin_right = 256.0
 margin_bottom = 268.0
 mouse_filter = 2
 
@@ -392,25 +393,29 @@ type = 1
 [node name="tween" type="Tween" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
 
 [node name="controlForcePosition" type="Control" parent="debugUi/debugControl/marginCtnHud"]
-margin_left = 2.0
 margin_top = 2.0
-margin_right = 252.0
+margin_right = 256.0
 margin_bottom = 268.0
 mouse_filter = 2
 
+[node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud/controlForcePosition"]
+margin_right = 40.0
+margin_bottom = 40.0
+
 [node name="hudPanelScore" parent="debugUi/debugControl/marginCtnHud/controlForcePosition" instance=ExtResource( 15 )]
-margin_left = 221.0
-margin_top = -8.0
-margin_right = 255.0
-margin_bottom = 9.0
+margin_left = 253.75
+margin_top = -68.25
+margin_right = 287.75
+margin_bottom = -51.25
 
 [node name="hudPanelEnergy" parent="debugUi/debugControl/marginCtnHud/controlForcePosition" instance=ExtResource( 8 )]
-margin_left = -2.0
-margin_top = -2.0
-margin_right = 28.0
-margin_bottom = 16.0
+margin_left = -30.0
+margin_top = -69.5
+margin_right = 5.0
+margin_bottom = -51.5
 
 [node name="controlGuide" parent="debugUi/debugControl" instance=ExtResource( 17 )]
+visible = false
 
 [node name="controlGameOver" parent="debugUi" instance=ExtResource( 23 )]
 
