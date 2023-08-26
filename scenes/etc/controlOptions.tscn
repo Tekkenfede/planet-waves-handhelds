@@ -109,9 +109,6 @@ font_data = ExtResource( 1 )
 margin_right = 240.0
 margin_bottom = 150.0
 script = SubResource( 32 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="tween" type="Tween" parent="."]
 
@@ -272,6 +269,7 @@ custom_fonts/font = SubResource( 30 )
 text = "Destroy tower"
 align = 1
 valign = 1
+
 [connection signal="mouse_entered" from="." to="." method="_on_controlOptions_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_controlOptions_mouse_exited"]
 [connection signal="mouse_entered" from="options/hboxCooldown/panelCtnIcon/btn" to="options/hboxCooldown/panelCtnIcon/btn" method="_on_btnDestroy_mouse_entered"]

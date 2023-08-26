@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://scenes/etc/spawner.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/fonts/m3x6.ttf" type="DynamicFontData" id=2]
@@ -28,6 +28,8 @@
 [ext_resource path="res://resources/textures/vignette.png" type="Texture" id=26]
 [ext_resource path="res://resources/textures/nebulaAlt1.png" type="Texture" id=27]
 [ext_resource path="res://scenes/sprNebula.gd" type="Script" id=28]
+[ext_resource path="res://scenes/node2D.gd" type="Script" id=29]
+[ext_resource path="res://resources/textures/pxArt.png" type="Texture" id=30]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
@@ -172,6 +174,7 @@ centered = false
 [node name="sprite" type="Sprite" parent="layerVignette"]
 modulate = Color( 1, 1, 1, 0.4 )
 light_mask = 0
+scale = Vector2( 2.50391, 1.77206 )
 texture = ExtResource( 26 )
 centered = false
 
@@ -184,10 +187,10 @@ mouse_filter = 2
 script = ExtResource( 22 )
 
 [node name="panelUnlocks" type="PanelContainer" parent="debugUi/debugControl"]
-margin_left = 169.0
-margin_top = 294.0
-margin_right = 253.0
-margin_bottom = 367.0
+margin_left = 276.704
+margin_top = 482.0
+margin_right = 360.704
+margin_bottom = 555.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -212,8 +215,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 25.0
 margin_top = 55.0
-margin_right = 25.0
-margin_bottom = 55.0
+margin_right = 157.0
+margin_bottom = 107.0
 rect_scale = Vector2( 0.8, 0.8 )
 mouse_filter = 2
 custom_constants/margin_top = 2
@@ -221,16 +224,16 @@ custom_constants/margin_bottom = 4
 
 [node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud"]
 margin_top = 2.0
-margin_right = 256.0
-margin_bottom = 268.0
+margin_right = 772.0
+margin_bottom = 528.0
 mouse_filter = 2
 
 [node name="ctnStructuresUi" type="MarginContainer" parent="debugUi/debugControl/marginCtnHud/control"]
-margin_left = 35.0
-margin_top = 67.0
-margin_right = 285.0
-margin_bottom = 333.0
-rect_scale = Vector2( 0.75, 0.75 )
+margin_left = 180.0
+margin_top = 115.75
+margin_right = 430.0
+margin_bottom = 381.75
+rect_scale = Vector2( 1.5, 1.5 )
 mouse_filter = 2
 size_flags_horizontal = 4
 script = SubResource( 3 )
@@ -347,9 +350,9 @@ text = "5"
 align = 1
 
 [node name="panelStructures" type="PanelContainer" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
-margin_left = 73.0
-margin_top = 242.0
-margin_right = 177.0
+margin_left = 43.0
+margin_top = 230.0
+margin_right = 207.0
 margin_bottom = 266.0
 mouse_filter = 1
 size_flags_horizontal = 4
@@ -362,40 +365,47 @@ __meta__ = {
 [node name="hboxStructures" type="HBoxContainer" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures"]
 margin_left = 4.0
 margin_top = 3.0
-margin_right = 100.0
-margin_bottom = 23.0
+margin_right = 160.0
+margin_bottom = 35.0
 rect_min_size = Vector2( 96, 0 )
 alignment = 1
 script = ExtResource( 21 )
 
 [node name="vboxPhoto" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 0.0
-margin_right = 16.0
+margin_right = 28.0
+margin_bottom = 32.0
 
 [node name="vboxSpread" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
-margin_left = 20.0
-margin_right = 36.0
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
 type = 3
 
 [node name="vboxShield" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
 type = 4
 
 [node name="vboxLaser" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
-margin_left = 60.0
-margin_right = 76.0
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
 type = 2
 
 [node name="vboxHoming" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
-margin_left = 80.0
-margin_right = 96.0
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
 type = 1
 
 [node name="tween" type="Tween" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
 
 [node name="controlForcePosition" type="Control" parent="debugUi/debugControl/marginCtnHud"]
 margin_top = 2.0
-margin_right = 256.0
-margin_bottom = 268.0
+margin_right = 772.0
+margin_bottom = 528.0
 mouse_filter = 2
 
 [node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud/controlForcePosition"]
@@ -427,8 +437,9 @@ z_as_relative = false
 texture = ExtResource( 7 )
 
 [node name="sprNebula" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.33 )
-scale = Vector2( 1.5, 1.5 )
+modulate = Color( 1, 1, 1, 0.168627 )
+position = Vector2( 498, -25.5001 )
+scale = Vector2( 5.49107, 5.125 )
 texture = ExtResource( 27 )
 script = ExtResource( 28 )
 
@@ -473,3 +484,14 @@ valign = 1
 script = SubResource( 42 )
 
 [node name="spawner" parent="." instance=ExtResource( 1 )]
+
+[node name="canvasLayer" type="CanvasLayer" parent="."]
+
+[node name="node2D" type="Node2D" parent="canvasLayer"]
+script = ExtResource( 29 )
+
+[node name="sprite" type="Sprite" parent="canvasLayer/node2D"]
+position = Vector2( 7.386, 9.287 )
+rotation = -0.651008
+scale = Vector2( 0.032, 0.032 )
+texture = ExtResource( 30 )

@@ -22,9 +22,6 @@ grow_horizontal = 0
 grow_vertical = 0
 rect_min_size = Vector2( 782, 76 )
 custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="PlayerName" type="RichTextLabel" parent="."]
 margin_left = 22.0

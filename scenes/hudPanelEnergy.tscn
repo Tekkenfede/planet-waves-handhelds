@@ -52,6 +52,7 @@ func _process(_delta:float) -> void:
 [node name="hudPanelEnergy" type="PanelContainer"]
 margin_right = 27.0
 margin_bottom = 18.0
+rect_scale = Vector2( 2.3, 2.3 )
 mouse_filter = 1
 size_flags_horizontal = 0
 size_flags_vertical = 0

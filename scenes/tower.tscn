@@ -259,12 +259,9 @@ margin_left = 36.0
 margin_top = -64.0
 margin_right = 131.0
 margin_bottom = -40.0
-rect_scale = Vector2( 2, 2 )
+rect_scale = Vector2( 4, 4 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 14 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="label" type="Label" parent="layerControl/panelGuide"]
 margin_left = 5.0

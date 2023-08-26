@@ -48,7 +48,7 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 0, 0.188235, 0.286275, 1 )
-position = Vector2( 128, 136 )
+position = Vector2( 317.168, 240.168 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -56,10 +56,10 @@ __meta__ = {
 }
 
 [node name="strTitle2" type="Label" parent="."]
-margin_left = 102.0
-margin_top = 130.0
-margin_right = 155.0
-margin_bottom = 141.0
+margin_left = 291.168
+margin_top = 234.168
+margin_right = 344.168
+margin_bottom = 245.168
 size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
@@ -67,15 +67,12 @@ custom_fonts/font = SubResource( 3 )
 text = "~\\\"'/+"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="strTitle3" type="Label" parent="."]
-margin_left = 84.0
-margin_top = 115.0
-margin_right = 172.0
-margin_bottom = 157.0
+margin_left = 273.168
+margin_top = 219.168
+margin_right = 361.168
+margin_bottom = 261.168
 size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )
@@ -85,8 +82,5 @@ text = "PLANET
 WAVES"
 align = 1
 valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="tween" type="Tween" parent="."]

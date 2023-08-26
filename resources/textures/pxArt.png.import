@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/splashScreen.png-7c93abcc223ca81af5e21a9ff3318576.stex"
+path="res://.import/pxArt.png-81a6d846f46b801e14d4e2f851d519d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/splashScreen.png"
-dest_files=[ "res://.import/splashScreen.png-7c93abcc223ca81af5e21a9ff3318576.stex" ]
+source_file="res://resources/textures/pxArt.png"
+dest_files=[ "res://.import/pxArt.png-81a6d846f46b801e14d4e2f851d519d9.stex" ]
 
 [params]
 
