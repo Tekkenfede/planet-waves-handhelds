@@ -14,8 +14,8 @@ dest_files=[ "res://.import/star_01.png-48459e8668c47b2a3e76d8fce6d5a6d3.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

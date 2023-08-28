@@ -41,10 +41,11 @@ SilentWolf="*res://addons/silent_wolf/SilentWolf.gd"
 
 [display]
 
-window/size/width=640
-window/size/height=480
+window/size/width=512
+window/size/height=384
 window/size/test_width=640
 window/size/test_height=480
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
@@ -153,5 +154,16 @@ name_casing=1
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
+threads/thread_model=2
+quality/directional_shadow/size=1280
+quality/directional_shadow/size.mobile=768
+quality/shadow_atlas/size=1280
+quality/shadow_atlas/size.mobile=768
+quality/reflections/texture_array_reflections=false
+quality/reflections/high_quality_ggx=false
+quality/filters/anisotropic_filter_level=1
+quality/lightmapping/use_bicubic_sampling=false
 environment/default_clear_color=Color( 0.345098, 0.345098, 0.345098, 1 )
+quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"

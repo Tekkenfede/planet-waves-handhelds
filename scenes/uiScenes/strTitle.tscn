@@ -42,13 +42,10 @@ mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 script = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="sprite" type="Sprite" parent="."]
 modulate = Color( 0, 0.188235, 0.286275, 1 )
-position = Vector2( 317.168, 240.168 )
+position = Vector2( 255.168, 193.168 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -56,10 +53,10 @@ __meta__ = {
 }
 
 [node name="strTitle2" type="Label" parent="."]
-margin_left = 291.168
-margin_top = 234.168
-margin_right = 344.168
-margin_bottom = 245.168
+margin_left = 229.168
+margin_top = 187.168
+margin_right = 282.168
+margin_bottom = 198.168
 size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_colors/font_color = Color( 0.988235, 0.74902, 0.286275, 1 )
@@ -69,10 +66,10 @@ align = 1
 valign = 1
 
 [node name="strTitle3" type="Label" parent="."]
-margin_left = 273.168
-margin_top = 219.168
-margin_right = 361.168
-margin_bottom = 261.168
+margin_left = 211.168
+margin_top = 172.168
+margin_right = 299.168
+margin_bottom = 214.168
 size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_colors/font_color = Color( 0, 0.188235, 0.286275, 1 )

@@ -8,7 +8,7 @@ func _ready() -> void:
 	global.nUnlockPanel=self
 
 func showMessage(message) -> void:
-	var targetY = 350#240 if global.nCtnStructures.bHidden else 210
+	var targetY = 260#240 if global.nCtnStructures.bHidden else 210
 	$label.text = message
 	var _v = $tween.interpolate_property(self, 'rect_global_position:y', self.rect_global_position.y, targetY, 0.3, Tween.TRANS_QUINT, Tween.EASE_OUT)
 	_v = $tween.start()

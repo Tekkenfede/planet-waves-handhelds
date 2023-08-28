@@ -1,4 +1,5 @@
 extends Node
+
 #tp06C94c9Q80yZtcqE7bX3WfYvH522az3rc35Os3
 #PlanetWaves
 var player
@@ -57,11 +58,12 @@ func resetGame():
 	var _v = get_tree().reload_current_scene()
 
 func _ready() -> void:
+
 	var f=File.new()
 	f.open('res://.env', File.READ)
 	self.apiKey = f.get_line()
 	f.close()
-	
+	OS.set_low_processor_usage_mode(true)
 	SilentWolf.configure({
 		"api_key": self.apiKey,
 		"game_id": "PlanetWaves",
@@ -72,6 +74,7 @@ func _ready() -> void:
 	if OS.is_debug_build():
 		#self.fEnergy+=1000
 		pass
+		
 	add_child(sfxMusic.instance())
 	set_process(true)
 	
@@ -79,7 +82,6 @@ func _process(_delta:float) -> void:
 	if OS.is_debug_build() and Input.is_action_just_pressed('ui_debug'):
 		self.iPlanetLife -= 20
 		self.iScore = 10000
-	
 	if Input.is_action_just_pressed("ui_mute") and not self.bGameOver:
 		AudioServer.set_bus_mute(AudioServer.get_bus_index('Master'),!AudioServer.is_bus_mute(AudioServer.get_bus_index('Master')))
 	

@@ -14,8 +14,8 @@ dest_files=[ "res://.import/iconLaser.png-8f5d7635c27d227f0b905db87436cda9.stex"
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -14,8 +14,8 @@ dest_files=[ "res://.import/iconShield.png-b286d88bb12b8177a49b2c6b929287e2.stex
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

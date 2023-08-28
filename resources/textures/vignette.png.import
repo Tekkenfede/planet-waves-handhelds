@@ -14,8 +14,8 @@ dest_files=[ "res://.import/vignette.png-aeb3c42b9cb90dc218b8c3221779898f.stex" 
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.3
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

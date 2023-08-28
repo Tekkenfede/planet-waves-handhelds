@@ -26,10 +26,11 @@
 [ext_resource path="res://scenes/etc/splashFadeAway.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scenes/etc/pauseLayer.tscn" type="PackedScene" id=25]
 [ext_resource path="res://resources/textures/vignette.png" type="Texture" id=26]
-[ext_resource path="res://resources/textures/nebulaAlt1.png" type="Texture" id=27]
-[ext_resource path="res://scenes/sprNebula.gd" type="Script" id=28]
+[ext_resource path="res://scenes/debugRootMain3.tres" type="DynamicFont" id=27]
+[ext_resource path="res://scenes/FPSCounter.gd" type="Script" id=28]
 [ext_resource path="res://scenes/node2D.gd" type="Script" id=29]
 [ext_resource path="res://resources/textures/pxArt.png" type="Texture" id=30]
+[ext_resource path="res://scenes/debugRootMain2.tres" type="DynamicFont" id=31]
 
 [sub_resource type="StyleBoxFlat" id=1]
 content_margin_left = 16.0
@@ -117,12 +118,6 @@ script/source = "extends Node2D
 func _ready():global.nDebug2droot=self
 "
 
-[sub_resource type="DynamicFont" id=41]
-size = 96
-extra_spacing_top = 22
-extra_spacing_char = 6
-font_data = ExtResource( 10 )
-
 [sub_resource type="GDScript" id=42]
 script/source = "extends Label
 func _ready() -> void:
@@ -152,6 +147,15 @@ layer = 127
 
 [node name="layerTitle" parent="." instance=ExtResource( 14 )]
 
+[node name="FPSCounter" type="Label" parent="layerTitle"]
+margin_left = 10.148
+margin_top = 41.044
+margin_right = 304.148
+margin_bottom = 147.044
+custom_fonts/font = ExtResource( 31 )
+text = "FPS: 60"
+script = ExtResource( 28 )
+
 [node name="layerBg" type="CanvasLayer" parent="."]
 layer = -5
 visible = false
@@ -162,12 +166,6 @@ modulate = Color( 0, 0.188235, 0.286275, 1 )
 scale = Vector2( 10000, 10000 )
 z_as_relative = false
 texture = ExtResource( 7 )
-
-[node name="sprNebula" type="Sprite" parent="layerBg"]
-visible = false
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 27 )
-centered = false
 
 [node name="layerVignette" type="CanvasLayer" parent="."]
 
@@ -187,10 +185,10 @@ mouse_filter = 2
 script = ExtResource( 22 )
 
 [node name="panelUnlocks" type="PanelContainer" parent="debugUi/debugControl"]
-margin_left = 276.704
-margin_top = 482.0
-margin_right = 360.704
-margin_bottom = 555.0
+margin_left = 207.679
+margin_top = 400.0
+margin_right = 303.679
+margin_bottom = 490.0
 mouse_filter = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -199,9 +197,9 @@ script = ExtResource( 19 )
 
 [node name="label" type="Label" parent="debugUi/debugControl/panelUnlocks"]
 margin_left = 16.0
-margin_top = 6.0
-margin_right = 68.0
-margin_bottom = 37.0
+margin_top = 14.0
+margin_right = 79.9999
+margin_bottom = 45.0
 custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
 custom_fonts/font = SubResource( 43 )
 text = "Unlocked spread"
@@ -224,15 +222,15 @@ custom_constants/margin_bottom = 4
 
 [node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud"]
 margin_top = 2.0
-margin_right = 772.0
-margin_bottom = 528.0
+margin_right = 644.0
+margin_bottom = 432.0
 mouse_filter = 2
 
 [node name="ctnStructuresUi" type="MarginContainer" parent="debugUi/debugControl/marginCtnHud/control"]
-margin_left = 180.0
-margin_top = 115.75
-margin_right = 430.0
-margin_bottom = 381.75
+margin_left = 102.5
+margin_top = 9.5
+margin_right = 352.5
+margin_bottom = 275.5
 rect_scale = Vector2( 1.5, 1.5 )
 mouse_filter = 2
 size_flags_horizontal = 4
@@ -351,7 +349,7 @@ align = 1
 
 [node name="panelStructures" type="PanelContainer" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
 margin_left = 43.0
-margin_top = 230.0
+margin_top = 224.0
 margin_right = 207.0
 margin_bottom = 266.0
 mouse_filter = 1
@@ -366,7 +364,7 @@ __meta__ = {
 margin_left = 4.0
 margin_top = 3.0
 margin_right = 160.0
-margin_bottom = 35.0
+margin_bottom = 41.0
 rect_min_size = Vector2( 96, 0 )
 alignment = 1
 script = ExtResource( 21 )
@@ -374,38 +372,38 @@ script = ExtResource( 21 )
 [node name="vboxPhoto" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 0.0
 margin_right = 28.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 
 [node name="vboxSpread" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 32.0
 margin_right = 60.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 type = 3
 
 [node name="vboxShield" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 64.0
 margin_right = 92.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 type = 4
 
 [node name="vboxLaser" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 96.0
 margin_right = 124.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 type = 2
 
 [node name="vboxHoming" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi/panelStructures/hboxStructures" instance=ExtResource( 11 )]
 margin_left = 128.0
 margin_right = 156.0
-margin_bottom = 32.0
+margin_bottom = 38.0
 type = 1
 
 [node name="tween" type="Tween" parent="debugUi/debugControl/marginCtnHud/control/ctnStructuresUi"]
 
 [node name="controlForcePosition" type="Control" parent="debugUi/debugControl/marginCtnHud"]
 margin_top = 2.0
-margin_right = 772.0
-margin_bottom = 528.0
+margin_right = 644.0
+margin_bottom = 432.0
 mouse_filter = 2
 
 [node name="control" type="Control" parent="debugUi/debugControl/marginCtnHud/controlForcePosition"]
@@ -435,13 +433,6 @@ scale = Vector2( 10000, 10000 )
 z_index = -999
 z_as_relative = false
 texture = ExtResource( 7 )
-
-[node name="sprNebula" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.168627 )
-position = Vector2( 498, -25.5001 )
-scale = Vector2( 5.49107, 5.125 )
-texture = ExtResource( 27 )
-script = ExtResource( 28 )
 
 [node name="bgParticles" parent="." instance=ExtResource( 12 )]
 
@@ -477,7 +468,7 @@ margin_right = 59.0
 margin_bottom = 56.0
 size_flags_horizontal = 4
 custom_colors/font_color = Color( 0.917647, 0.886275, 0.717647, 1 )
-custom_fonts/font = SubResource( 41 )
+custom_fonts/font = ExtResource( 27 )
 text = "20"
 align = 1
 valign = 1
